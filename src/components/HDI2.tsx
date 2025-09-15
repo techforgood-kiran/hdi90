@@ -114,12 +114,12 @@ const HDI2 = () => {
                 Not Based on Statistical Averages
               </h3>
               <p className="text-lg leading-relaxed mb-4">
-                The HDI 2.0 is <strong>NOT based on STUPID statistical averages!</strong> 
-                But on the total well-being and happiness of currently the poorest and most down-trodden.
+                HDI 2.0 rejects misleading statistical averages that hide suffering behind numbers. 
+                Instead, we measure the actual well-being of those society has forgotten.
               </p>
               <p className="text-lg leading-relaxed opacity-90">
-                This revolutionary approach is possible with modern technology and AI, 
-                ensuring no one is left behind in our journey toward global development.
+                Modern technology and AI enable us to truly see and serve the most vulnerable, 
+                making authentic development possible for the first time in human history.
               </p>
             </CardContent>
           </Card>

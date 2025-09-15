@@ -8,11 +8,11 @@ const CallToAction = () => {
       <div className="container mx-auto px-4">
         <div className="text-center text-white mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Join the Revolution
+            Join This Movement
           </h2>
           <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
-            Be part of the global movement to achieve HDI 0.90 by 2040. 
-            Together, we can create a world where development truly reaches everyone.
+            A principled commitment to achieve HDI 0.90 by 2030. 
+            This work requires integrity, persistence, and genuine care for human dignity.
           </p>
         </div>
 
@@ -42,8 +42,8 @@ const CallToAction = () => {
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-2">2040 Deadline</h3>
-              <p className="opacity-90">Urgent action with clear timeline</p>
+              <h3 className="text-xl font-bold mb-2">2030 Commitment</h3>
+              <p className="opacity-90">Accountable action with moral urgency</p>
             </CardContent>
           </Card>
         </div>
@@ -54,7 +54,7 @@ const CallToAction = () => {
               size="lg" 
               className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg shadow-medium"
             >
-              Start Your Journey
+              Make Your Commitment
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
@@ -62,12 +62,12 @@ const CallToAction = () => {
               size="lg" 
               className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg"
             >
-              Download Manifesto
+              Read Our Principles
             </Button>
           </div>
           
           <p className="mt-6 text-white/80 text-sm">
-            Ready to make real change? Join thousands of others committed to human development.
+            This work demands authenticity, patience, and unwavering commitment to human dignity.
           </p>
         </div>
       </div>

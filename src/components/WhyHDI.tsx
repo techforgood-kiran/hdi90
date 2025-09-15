@@ -108,12 +108,12 @@ const WhyHDI = () => {
         <div className="mt-16 text-center">
           <div className="max-w-4xl mx-auto p-8 bg-gradient-hero rounded-2xl shadow-strong">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Our Vision: De-linking Economic Growth from True Well-being
+              Our Commitment: Genuine Well-being Over Economic Metrics
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Through <strong>Systems Thinking</strong>, <strong>Business Model Innovation</strong>, 
-              and <strong>Circular Economy</strong> principles — Reduce, Reuse, Recycle — 
-              we can achieve sustainable development within planetary boundaries.
+              Through <strong>Systems Thinking</strong>, <strong>Ethical Business Models</strong>, 
+              and <strong>Circular Economy</strong> principles — we believe authentic development 
+              must honor planetary boundaries while ensuring no one is left behind.
             </p>
           </div>
         </div>
