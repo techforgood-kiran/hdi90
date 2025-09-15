@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // HDI Theme Colors
+        "hdi-blue": "hsl(var(--hdi-blue))",
+        "hdi-green": "hsl(var(--hdi-green))",
+        "hdi-gold": "hsl(var(--hdi-gold))",
+        "hdi-navy": "hsl(var(--hdi-navy))",
+        "hdi-light-blue": "hsl(var(--hdi-light-blue))",
+        "hdi-light-green": "hsl(var(--hdi-light-green))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +64,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-accent": "var(--gradient-accent)",
+      },
+      boxShadow: {
+        "soft": "var(--shadow-soft)",
+        "medium": "var(--shadow-medium)",
+        "strong": "var(--shadow-strong)",
       },
       borderRadius: {
         lg: "var(--radius)",
