@@ -10,7 +10,7 @@ const HDI2 = () => {
       color: "text-red-500",
       bgColor: "bg-red-50",
       description: "Based on preventive diagnostic health profile, psychosomatic profile, end of life quality expectancy, genetic markers and lifestyle (Diet, Exercise and Yoga adherence)",
-      link: "https://nura.in/",
+      link: undefined,
       sdgs: [
         { number: "2", title: "Zero Hunger", focus: "Nutrition & food security" },
         { number: "3", title: "Good Health & Well-being", focus: "Universal health & disease prevention" },
