@@ -49,8 +49,8 @@ const Hero = () => {
             <div className="text-lg opacity-90">Target HDI by 2030</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-hdi-gold mb-2">193</div>
-            <div className="text-lg opacity-90">Countries to Impact</div>
+            <div className="text-3xl md:text-4xl font-bold text-hdi-gold mb-2">195</div>
+            <div className="text-lg opacity-90">Nation States to Impact</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-hdi-gold mb-2">17</div>

@@ -39,7 +39,7 @@ const WhyHDI = () => {
                         <AlertTriangle className="w-6 h-6 text-red-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-hdi-navy">HDI: 0.685 (Rank 130/193)</div>
+                        <div className="font-semibold text-hdi-navy">HDI: 0.685 (Rank 130/195)</div>
                         <div className="text-sm text-muted-foreground">Massive disparity in human development</div>
                       </div>
                     </div>
