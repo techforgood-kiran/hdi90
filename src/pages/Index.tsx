@@ -27,10 +27,10 @@ const Index = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <AnimatedHero scrollProgress={scrollYProgress} />
-      <AnimatedWhyHDI scrollProgress={scrollYProgress} />
-      <AnimatedHDI2 scrollProgress={scrollYProgress} />
-      <AnimatedCallToAction scrollProgress={scrollYProgress} />
+      <AnimatedHero />
+      <AnimatedWhyHDI />
+      <AnimatedHDI2 />
+      <AnimatedCallToAction />
     </motion.div>
   );
 };

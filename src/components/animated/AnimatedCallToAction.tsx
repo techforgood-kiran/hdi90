@@ -1,268 +1,106 @@
-import { motion, useTransform, MotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Clock, Target } from "lucide-react";
-import { ParticleSystem } from "@/components/Canvas/ParticleSystem";
 import { useInView } from "react-intersection-observer";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
-export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
-  const y = useTransform(scrollProgress, [0, 1], [100, -50]);
-  const opacity = useTransform(scrollProgress, [0.7, 1], [0, 1]);
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
-  
-  console.log('AnimatedCallToAction inView:', inView);
-
-  const containerVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94] as const
-      }
-    }
-  };
+export const AnimatedCallToAction = () => {
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   const urgencyItems = [
     {
       icon: Clock,
       title: <CountdownTimer />,
-      description: "Until 31.12.2030 IST midnight",
-      color: "text-red-500"
+      description: "Time remaining to achieve HDI 2030 goal"
     },
     {
       icon: Users,
       title: "8 Billion Lives",
-      description: "Depending on our collective action",
-      color: "text-hdi-blue"
+      description: "Global population depending on our collective action"
     },
     {
       icon: Target,
-      title: "0.90 HDI Goal",
-      description: "Achievable with principled commitment",
-      color: "text-hdi-gold"
+      title: "17 SDGs",
+      description: "UN Sustainable Development Goals at stake"
     }
   ];
 
   return (
-    <motion.section 
+    <section 
       ref={ref}
       className="py-20 bg-gradient-hero relative overflow-hidden"
-      style={{ y, opacity }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
     >
-      {/* Multi-layered Particle Systems */}
-      <ParticleSystem scrollProgress={0.8} theme="health" />
-      <div className="absolute inset-0 opacity-50">
-        <ParticleSystem scrollProgress={0.6} theme="environment" />
-      </div>
-      
-      <div className="container mx-auto px-4 text-center text-white relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
+      <div className="container mx-auto px-4 text-white">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
         >
-          {/* Urgency Indicators */}
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8 mb-12"
-            variants={itemVariants}
-          >
-            {urgencyItems.map((item, index) => (
-              <motion.div
-                key={index}
-                className="text-center"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {urgencyItems.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
                 <motion.div
-                  className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm"
-                  animate={{ 
-                    boxShadow: [
-                      "0 0 0 0 rgba(255, 255, 255, 0.3)",
-                      "0 0 0 20px rgba(255, 255, 255, 0)",
-                    ]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.5
-                  }}
+                  key={index}
+                  className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <item.icon className={`w-8 h-8 ${item.color}`} />
+                  <IconComponent className="w-12 h-12 text-hdi-gold mx-auto mb-4" />
+                  <div className="text-xl font-bold mb-2">{item.title}</div>
+                  <p className="text-white/80">{item.description}</p>
                 </motion.div>
-                <motion.h3 
-                  className="text-xl font-bold mb-2"
-                  animate={{ 
-                    color: ["#ffffff", item.color.replace('text-', '#'), "#ffffff"]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.7
-                  }}
-                >
-                  {item.title}
-                </motion.h3>
-                <p className="text-white/80">{item.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
 
-          {/* Main CTA Content */}
-          <motion.h2 
-            className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
-            variants={itemVariants}
-          >
-            The Time for Principled Action
-            <motion.span 
-              className="block text-hdi-gold"
-              animate={{ 
-                textShadow: [
-                  "0 0 20px rgba(245, 158, 11, 0.5)",
-                  "0 0 40px rgba(245, 158, 11, 0.8)",
-                  "0 0 20px rgba(245, 158, 11, 0.5)"
-                ]
-              }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Is Now
-            </motion.span>
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90"
-            variants={itemVariants}
-          >
-            Join committed individuals and organizations working toward genuine human development. 
-            Together, we can achieve HDI 0.90 by 2030 through ethical entrepreneurship and meaningful impact.
-          </motion.p>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            The Time is Now
+          </h2>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+            Join us in creating a world where human development transcends economic metrics, 
+            where every individual has the opportunity to thrive holistically.
+          </p>
 
-          {/* Action Buttons with Advanced Animations */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
-            variants={itemVariants}
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={{ 
-                boxShadow: [
-                  "0 0 0 0 rgba(245, 158, 11, 0.4)",
-                  "0 0 0 10px rgba(245, 158, 11, 0)",
-                ]
-              }}
-              transition={{ 
-                boxShadow: { duration: 2, repeat: Infinity },
-                scale: { duration: 0.2 }
-              }}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg transition-all hover:scale-105"
             >
-              <Button 
-                size="lg" 
-                className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-10 py-6 text-xl shadow-medium"
-              >
-                Commit to the Movement
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight className="ml-2 w-6 h-6" />
-                </motion.div>
-              </Button>
-            </motion.div>
-            
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              Start Your Journey
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-white/50 text-white hover:bg-white/10 px-8 py-4 text-lg transition-all hover:scale-105"
             >
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white/30 text-white hover:bg-white/10 px-10 py-6 text-xl backdrop-blur-sm"
-              >
-                Learn Our Approach
-              </Button>
-            </motion.div>
-          </motion.div>
+              Learn More
+            </Button>
+          </div>
+        </motion.div>
 
-          {/* Commitment Statement */}
-          <motion.div
-            className="max-w-4xl mx-auto"
-            variants={itemVariants}
-          >
-            <motion.div 
-              className="p-6 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20"
-              whileHover={{ 
-                backgroundColor: "rgba(255, 255, 255, 0.15)",
-                scale: 1.02
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.p 
-                className="text-lg font-medium mb-3"
-                animate={{ 
-                  opacity: [0.8, 1, 0.8]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                "We commit to measuring success not by wealth accumulated, 
-                but by lives genuinely improved and dignity restored."
-              </motion.p>
-              <motion.p 
-                className="text-sm opacity-80"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
-                transition={{ delay: 1 }}
-              >
-                — HDI 2030 Founding Principles
-              </motion.p>
-            </motion.div>
-          </motion.div>
+        <motion.div 
+          className="max-w-4xl mx-auto text-center p-8 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <blockquote className="text-2xl md:text-3xl font-light italic mb-4 leading-relaxed">
+            "The best time to plant a tree was 20 years ago. The second best time is now."
+          </blockquote>
+          <p className="text-lg opacity-80">Ancient Proverb</p>
         </motion.div>
       </div>
-
-      {/* Floating Elements */}
-      <motion.div
-        className="absolute top-1/4 left-10 w-4 h-4 bg-hdi-gold/50 rounded-full"
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.5, 1, 0.5]
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute top-1/3 right-10 w-6 h-6 bg-white/30 rounded-full"
-        animate={{
-          y: [0, 15, 0],
-          opacity: [0.3, 0.8, 0.3]
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
-    </motion.section>
+    </section>
   );
 };
