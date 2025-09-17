@@ -1,32 +1,37 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const clamp = (v: number, a = 0, b = 1) => Math.min(Math.max(v, a), b);
-const geometricMean = (arr: number[]) => {
+/**
+ * HDI2Landing — React + Tailwind component
+ * - Default export a single component
+ * - Interactive domain sliders, live HDI calculation (geometric mean)
+ *
+ * Usage:
+ * 1. Save as `HDI2Landing.jsx` inside your React app.
+ * 2. Ensure TailwindCSS is configured in the project.
+ * 3. Install framer-motion: `npm install framer-motion`.
+ * 4. Import and use: `import HDI2Landing from './HDI2Landing'`
+ */
+
+const clamp = (v, a = 0, b = 1) => Math.min(Math.max(v, a), b);
+const geometricMean = (arr) => {
   const eps = 1e-4;
   const prods = arr.map((x) => Math.max(x, eps)).reduce((s, v) => s * v, 1);
   return Math.pow(prods, 1 / arr.length);
 };
 
-interface HDICalculatorProps {
-  initial?: { health: number; education: number; happiness: number; environment: number };
-}
-
-export default function HDICalculator({ 
-  initial = { health: 0.76, education: 0.7, happiness: 0.68, environment: 0.78 } 
-}: HDICalculatorProps) {
+const HDI2Landing = ({ initial = { health: 0.76, education: 0.7, happiness: 0.68, environment: 0.78 } }) => {
   const [scores, setScores] = useState(() => ({ ...initial }));
-  const [showMethod, setShowMethod] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const domainArray = useMemo(() => [scores.health, scores.education, scores.happiness, scores.environment], [scores]);
   const hdi = useMemo(() => geometricMean(domainArray), [domainArray]);
 
-  function updateScore(key: keyof typeof scores, val: string) {
+  function updateScore(key, val) {
     setScores((s) => ({ ...s, [key]: clamp(Number(val)) }));
   }
 
-  function formatPct(n: number) {
+  function formatPct(n) {
     return `${(n * 100).toFixed(0)}%`;
   }
 
@@ -49,7 +54,7 @@ export default function HDICalculator({
 
         <div className="flex items-center gap-3">
           <button onClick={() => setShowModal(true)} className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg shadow">Get my HDI</button>
-          <button onClick={() => setShowMethod((v) => !v)} className="border px-4 py-2 rounded-lg">Methodology</button>
+          <button onClick={() => window.location.href = '/methodology'} className="border px-4 py-2 rounded-lg">Methodology</button>
         </div>
       </header>
 
@@ -62,10 +67,10 @@ export default function HDICalculator({
 
           <div className="mt-6 space-y-4">
             {[
-              { key: "health" as keyof typeof scores, label: "AarogyaShree (Health)" },
-              { key: "education" as keyof typeof scores, label: "Education" },
-              { key: "happiness" as keyof typeof scores, label: "Happiness" },
-              { key: "environment" as keyof typeof scores, label: "Environment" },
+              { key: "health", label: "AarogyaShree (Health)" },
+              { key: "education", label: "Education" },
+              { key: "happiness", label: "Happiness" },
+              { key: "environment", label: "Environment" },
             ].map((d) => (
               <div key={d.key} className="flex items-center gap-4">
                 <div className="w-44">
@@ -163,53 +168,6 @@ export default function HDICalculator({
         </aside>
       </div>
 
-      {/* Methodology panel (animated) */}
-      <AnimatePresence>
-        {showMethod && (
-          <motion.section
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mt-6 bg-white rounded-2xl p-6 shadow"
-          >
-            <h3 className="text-lg font-semibold">Methodology (research-grade)</h3>
-            <p className="text-sm text-slate-600 mt-2">This panel describes the equations and practical steps used to compute each domain. It's designed for data teams and researchers.</p>
-
-            <div className="mt-4 grid md:grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-medium">Final aggregation</h4>
-                <pre className="bg-slate-900 text-white p-3 rounded mt-2 text-sm">HDI₂.₀ = (S_H × S_E × S_Hp × S_Env)^(1/4)</pre>
-
-                <h4 className="font-medium mt-4">Health (example)</h4>
-                <pre className="bg-slate-800 text-white p-3 rounded text-sm">S_H = 0.2I_bio + 0.2I_psy + 0.2I_eol + 0.2I_gen + 0.2I_life</pre>
-
-                <p className="text-xs text-slate-400 mt-2">Each I_* is a normalized composite (0–1). Use min–max or logistic transforms, winsorize outliers and bootstrap for CI.</p>
-              </div>
-
-              <div>
-                <h4 className="font-medium">Environment (example)</h4>
-                <pre className="bg-slate-800 text-white p-3 rounded text-sm">S_Env = 0.3 PBA + 0.2 E_personal + 0.2 E_group + 0.3 I_positive</pre>
-
-                <p className="text-xs text-slate-400 mt-2">Convert actions and emissions to CO₂e equivalents where possible. Require verification for positive claims to avoid double counting.</p>
-              </div>
-            </div>
-
-            <div className="mt-4 text-sm text-slate-500">
-              <ul className="list-disc pl-5">
-                <li>Normalization: min–max with clinically-informed bounds or logistic mapping for skewed metrics.</li>
-                <li>Missingness: multiple imputation (MICE) or hierarchical Bayesian imputation for fairness-preserving estimates.</li>
-                <li>Validation: correlate domain scores with hard outcomes (mortality, employment) and perform psychometric tests for survey domains.</li>
-              </ul>
-            </div>
-
-            <div className="mt-6 flex gap-3">
-              <button onClick={() => { navigator.clipboard.writeText(JSON.stringify(scores)); alert('Copied sample scores to clipboard'); }} className="px-4 py-2 bg-white border rounded">Copy sample scores</button>
-              <a className="px-4 py-2 bg-sky-600 text-white rounded" href="#contact">Request research demo</a>
-            </div>
-          </motion.section>
-        )}
-      </AnimatePresence>
-
       {/* Modal for Get my HDI (simple) */}
       <AnimatePresence>
         {showModal && (
@@ -237,4 +195,6 @@ export default function HDICalculator({
       <footer className="mt-10 text-sm text-slate-500">© {new Date().getFullYear()} HDI 2.0 — Built for research and policy teams</footer>
     </div>
   );
-}
+};
+
+export default HDI2Landing;
