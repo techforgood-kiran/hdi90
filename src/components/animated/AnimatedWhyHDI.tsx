@@ -34,6 +34,9 @@ export const AnimatedWhyHDI = () => {
         >
           <Card className="p-8 shadow-strong bg-gradient-hero text-white">
             <CardContent className="p-0">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-hdi-gold">
+                A Tale of Two Metrics
+              </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-left">
                   <div className="flex items-center mb-4">
@@ -52,12 +55,12 @@ export const AnimatedWhyHDI = () => {
                 <div className="text-left border-l-4 border-hdi-gold pl-6">
                   <div className="flex items-center mb-4">
                     <AlertTriangle className="w-8 h-8 text-red-400 mr-3" />
-                    <span className="text-2xl font-bold">Human Development</span>
+                    <span className="text-2xl font-bold">Human Development 1.0</span>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Heart className="w-5 h-5 text-red-400 mr-2" />
-                      <span>India: Ranked #132/193</span>
+                      <span>India: Ranked #130/193</span>
                     </div>
                     <div className="text-lg font-semibold text-red-400">HDI Score: 0.633</div>
                   </div>
