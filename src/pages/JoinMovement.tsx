@@ -2,200 +2,181 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Heart, Users, Leaf, GraduationCap, Clock, ArrowRight } from "lucide-react";
 
-const PROTOTYPES = [
+const impactStories = [
   {
-    id: 'palestine',
-    title: 'Palestine',
-    tag: 'Solar Telehealth & Community Learning Hubs',
-    img: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=60',
+    id: 'health',
+    icon: Heart,
+    title: 'Health Champions',
+    commitment: '30 min/week',
+    impact: '2,847 people screened',
+    story: 'Remote health monitoring in rural communities',
+    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80',
+    color: 'from-red-500 to-pink-500',
+    volunteers: 156
   },
   {
-    id: 'south-sudan',
-    title: 'South Sudan',
-    tag: 'Community Midwife Network + Solar Phone Packs',
-    img: 'https://images.unsplash.com/photo-1584467735871-2c9f4b3d5f5b?auto=format&fit=crop&w=800&q=60',
+    id: 'education',
+    icon: GraduationCap,
+    title: 'Learning Facilitators',
+    commitment: '45 min/week',
+    impact: '1,234 students mentored',
+    story: 'Digital literacy programs for underserved youth',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80',
+    color: 'from-blue-500 to-cyan-500',
+    volunteers: 289
   },
   {
-    id: 'syria',
-    title: 'Syria',
-    tag: 'Trauma Tele-Care + Teachers + Makerspaces',
-    img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60',
+    id: 'environment',
+    icon: Leaf,
+    title: 'Eco Warriors',
+    commitment: '1 hour/week',
+    impact: '15,678 trees planted',
+    story: 'Community-led environmental restoration projects',
+    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80',
+    color: 'from-green-500 to-emerald-500',
+    volunteers: 423
   },
   {
-    id: 'supaul',
-    title: 'Supaul, India',
-    tag: 'Village Learning Labs & Agri Value-chains',
-    img: 'https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=800&q=60',
-  },
+    id: 'happiness',
+    icon: Users,
+    title: 'Wellbeing Guides',
+    commitment: '20 min/week',
+    impact: '892 support circles formed',
+    story: 'Mental health and community resilience building',
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80',
+    color: 'from-purple-500 to-indigo-500',
+    volunteers: 334
+  }
 ];
 
-const coords = {
-  // approximate positions for hotspot circles on the SVG projection used below (viewBox 0 0 1000 500)
-  palestine: { x: 585, y: 175 },
-  'south-sudan': { x: 560, y: 245 },
-  syria: { x: 560, y: 150 },
-  supaul: { x: 770, y: 210 },
-};
-
-function RegionCard({ p, onSponsor }) {
-  return (
-    <div className="bg-white rounded-2xl p-4 shadow flex gap-4">
-      <img src={p.img} alt={p.title} className="w-28 h-20 rounded-lg object-cover flex-shrink-0" />
-      <div className="flex-1">
-        <div className="flex items-start justify-between">
-          <div>
-            <h4 className="font-semibold">{p.title}</h4>
-            <div className="text-xs text-slate-500">{p.tag}</div>
-          </div>
-          <div>
-            <button onClick={() => onSponsor(p)} className="bg-sky-600 text-white px-3 py-2 rounded">Sponsor</button>
-          </div>
-        </div>
-        <p className="text-sm text-slate-600 mt-2">High-leverage prototype to transform health, learning and livelihoods in a focused pilot. Transparent reporting, named sponsorships and local leadership.</p>
-      </div>
-    </div>
-  );
-}
-
-function HDI2MapSection() {
-  const [active, setActive] = useState(PROTOTYPES[0]);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  function handleClickRegion(id) {
-    const p = PROTOTYPES.find((x) => x.id === id);
-    if (p) setActive(p);
-  }
-
-  function openSponsor(p) {
-    setActive(p);
-    setModalOpen(true);
-  }
+function ImpactShowcase() {
+  const [activeStory, setActiveStory] = useState(impactStories[0]);
 
   return (
-    <section className="bg-slate-50 py-16 px-6">
+    <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <header className="mb-8 text-center">
-          <h2 className="text-3xl font-extrabold mb-4">HDI 2.0 — High-Leverage Prototype Sponsorships</h2>
-          <p className="text-slate-600">Sponsor a pilot to raise health, education, happiness and environmental impact in fragile and low-HDI regions.</p>
-        </header>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h2 className="text-4xl font-extrabold mb-6">
+            Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">2 Hours a Week</span> Changes Lives
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Real volunteers. Real impact. Real transformation happening right now across four pillars of human development.
+          </p>
+        </motion.div>
 
-        <div className="bg-white rounded-2xl p-6 shadow mb-8">
-          <h3 className="text-xl font-semibold">Want to know how your contribution can make a difference?</h3>
-          <p className="text-sm text-slate-500 mt-2">Click any region on the map below to explore a prototype, see the impact story, and sponsor a hub, midwife pack, tele-clinic seat or village lab.</p>
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          {/* Impact Cards */}
+          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+            {impactStories.map((story, index) => {
+              const IconComponent = story.icon;
+              return (
+                <motion.div
+                  key={story.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`relative group cursor-pointer ${activeStory.id === story.id ? 'ring-2 ring-white/50' : ''}`}
+                  onClick={() => setActiveStory(story)}
+                >
+                  <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 overflow-hidden">
+                    <div className="relative h-48">
+                      <img 
+                        src={story.image} 
+                        alt={story.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${story.color} opacity-80`}></div>
+                      <div className="absolute top-4 left-4">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-xl font-bold text-white mb-1">{story.title}</h3>
+                        <div className="flex items-center gap-2 text-white/90 text-sm">
+                          <Clock className="w-4 h-4" />
+                          <span>{story.commitment}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <div className="text-2xl font-bold text-white">{story.impact}</div>
+                        <div className="text-right text-sm text-gray-300">
+                          <div>{story.volunteers} volunteers</div>
+                          <div>active now</div>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 text-sm">{story.story}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
 
-          <div className="mt-6 grid md:grid-cols-3 gap-6 items-start">
-            <div className="md:col-span-2">
-              <div className="relative bg-slate-100 rounded-lg overflow-hidden" style={{ paddingTop: '40%' }}>
-                <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full">
-                  <defs>
-                    <linearGradient id="g" x1="0" x2="1">
-                      <stop offset="0%" stopColor="#c7f9f6" />
-                      <stop offset="100%" stopColor="#e6f7ff" />
-                    </linearGradient>
-                  </defs>
+          {/* Active Story Detail */}
+          <div className="lg:col-span-1">
+            <motion.div
+              key={activeStory.id}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="sticky top-8"
+            >
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 p-8">
+                <div className="text-center mb-6">
+                  <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${activeStory.color} mb-4`}>
+                    <activeStory.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">{activeStory.title}</h3>
+                  <p className="text-gray-300">{activeStory.story}</p>
+                </div>
 
-                  <g fill="#dbeafe" stroke="#c7def8" strokeWidth="0.5">
-                    <path d="M100 150 C160 110, 260 100, 360 140 C420 160, 520 150, 600 120 C680 90, 760 110, 820 160 C880 210, 900 260, 900 300 C880 320, 840 330, 800 320 C760 310, 720 300, 680 310 C640 320, 620 360, 580 380 C540 400, 480 410, 420 400 C360 390, 300 360, 240 350 C200 340, 160 320, 120 300 C90 280, 80 210, 100 150 Z" />
-                    <path d="M180 320 C220 300, 260 300, 300 320 C340 340, 380 360, 420 350 C460 340, 500 320, 540 330 C580 340, 620 360, 660 360 C700 360, 740 340, 780 340 C820 340, 860 360, 900 380" />
-                  </g>
+                <div className="space-y-4 mb-6">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300">Time Commitment</span>
+                    <span className="text-white font-semibold">{activeStory.commitment}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300">Active Volunteers</span>
+                    <span className="text-white font-semibold">{activeStory.volunteers}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300">Total Impact</span>
+                    <span className="text-white font-semibold">{activeStory.impact}</span>
+                  </div>
+                </div>
 
-                  <g stroke="#eef2ff" strokeWidth="0.5">
-                    <line x1="0" y1="50" x2="1000" y2="50" />
-                    <line x1="0" y1="150" x2="1000" y2="150" />
-                    <line x1="0" y1="250" x2="1000" y2="250" />
-                    <line x1="0" y1="350" x2="1000" y2="350" />
-                    <line x1="0" y1="450" x2="1000" y2="450" />
-                  </g>
-
-                  {Object.entries(coords).map(([key, c]) => (
-                    <g key={key} transform={`translate(${c.x}, ${c.y})`} style={{ cursor: 'pointer' }} onClick={() => handleClickRegion(key)}>
-                      <circle r="16" fill={active && active.id === key ? '#0ea5e9' : '#60a5fa'} stroke="#fff" strokeWidth="3" />
-                      <circle r="26" fill="none" stroke="#60a5fa" strokeOpacity="0.08" />
-                    </g>
-                  ))}
-
-                  <text x="585" y="155" fontSize="12" fill="#0f172a" textAnchor="middle">Palestine</text>
-                  <text x="560" y="265" fontSize="12" fill="#0f172a" textAnchor="middle">South Sudan</text>
-                  <text x="560" y="135" fontSize="12" fill="#0f172a" textAnchor="middle">Syria</text>
-                  <text x="770" y="195" fontSize="12" fill="#0f172a" textAnchor="middle">Supaul</text>
-                </svg>
-              </div>
-
-              <div className="mt-4 flex gap-3 flex-wrap">
-                {PROTOTYPES.map((p) => (
-                  <button key={p.id} onClick={() => handleClickRegion(p.id)} className={`px-3 py-2 rounded ${active.id === p.id ? 'bg-sky-600 text-white' : 'bg-white border text-slate-700'}`}>
-                    {p.title}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <aside className="bg-white rounded-lg p-4 shadow">
-              <h4 className="font-semibold">{active.title}</h4>
-              <div className="text-xs text-slate-500">{active.tag}</div>
-
-              <div className="mt-4">
-                <img src={active.img} alt={active.title} className="w-full h-36 object-cover rounded" />
-              </div>
-
-              <div className="mt-4 text-sm text-slate-600">
-                <p><strong>Prototype impact:</strong> Rapid screenings, teleconsults, teacher training, and livelihood pilots depending on the region. Transparent KPI dashboard and monthly reports to donors.</p>
-              </div>
-
-              <div className="mt-4 flex gap-3">
-                <button onClick={() => openSponsor(active)} className="flex-1 bg-emerald-600 text-white px-3 py-2 rounded">Sponsor this prototype</button>
-                <button onClick={() => alert('Share link copied')} className="px-3 py-2 border rounded">Share</button>
-              </div>
-            </aside>
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold py-3">
+                  Join {activeStory.title}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Card>
+            </motion.div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {PROTOTYPES.map((p) => (
-            <RegionCard key={p.id} p={p} onSponsor={openSponsor} />
-          ))}
-        </div>
-
-        <AnimatePresence>
-          {modalOpen && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center p-6">
-              <div className="absolute inset-0 bg-black opacity-40" onClick={() => setModalOpen(false)} />
-              <motion.div initial={{ scale: 0.98 }} animate={{ scale: 1 }} exit={{ scale: 0.98 }} className="relative z-10 w-full max-w-2xl bg-white rounded-2xl p-6 shadow-lg">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-lg font-bold">Sponsor: {active.title}</h3>
-                    <p className="text-sm text-slate-500 mt-1">Choose a named sponsorship and we'll send a detailed monthly ledger, impact videos and stories from the field.</p>
-                  </div>
-                  <div className="text-sm text-slate-400">Secure • Transparent • Receipts</div>
-                </div>
-
-                <div className="mt-4 grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs text-slate-600">Suggested products</label>
-                    <div className="mt-2 space-y-2">
-                      <button className="w-full text-left px-3 py-2 border rounded">Sponsor one Hub — <span className="font-semibold">$6,000</span></button>
-                      <button className="w-full text-left px-3 py-2 border rounded">Sponsor 1 Tele-Clinic Seat — <span className="font-semibold">$2,000</span></button>
-                      <button className="w-full text-left px-3 py-2 border rounded">Sponsor 1 CHW Pack — <span className="font-semibold">$1,800</span></button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs text-slate-600">Your details</label>
-                    <input placeholder="Full name" className="mt-2 w-full border rounded px-3 py-2" />
-                    <input placeholder="Email" className="mt-2 w-full border rounded px-3 py-2" />
-                    <textarea placeholder="Message to the field team" className="mt-2 w-full border rounded px-3 py-2 h-24" />
-                  </div>
-                </div>
-
-                <div className="mt-6 flex justify-end gap-3">
-                  <button onClick={() => setModalOpen(false)} className="px-4 py-2 border rounded">Cancel</button>
-                  <button onClick={() => { setModalOpen(false); alert('Thank you — sponsor acknowledged (simulated).'); }} className="px-4 py-2 bg-emerald-600 text-white rounded">Confirm Sponsor</button>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Call to Action */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="bg-gradient-to-r from-blue-600/20 to-emerald-600/20 rounded-2xl p-8 backdrop-blur-md border border-white/20">
+            <h3 className="text-2xl font-bold mb-4">Ready to Make Your Impact?</h3>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              Choose your path, commit your time, and join thousands of changemakers building a better world together.
+            </p>
+            <Button className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold px-8 py-3 text-lg">
+              Start Your Volunteer Journey
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -361,8 +342,8 @@ export default function JoinMovement() {
         </Button>
       </section>
 
-      {/* HDI Map Section */}
-      <HDI2MapSection />
+      {/* Impact Showcase */}
+      <ImpactShowcase />
     </div>
   );
 }
