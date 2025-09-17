@@ -1,8 +1,8 @@
 import { useCountdown } from '@/hooks/useCountdown';
 
 export const CountdownTimer = () => {
-  // December 31, 2025 at 12:00:00 AM IST (UTC+5:30)
-  const targetDate = new Date('2025-12-31T00:00:00+05:30');
+  // December 31, 2030 at 12:00:00 AM IST (UTC+5:30)
+  const targetDate = new Date('2030-12-31T00:00:00+05:30');
   const timeLeft = useCountdown(targetDate);
 
   if (timeLeft.totalMilliseconds <= 0) {

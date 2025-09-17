@@ -41,7 +41,7 @@ export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: Motio
     {
       icon: Clock,
       title: <CountdownTimer />,
-      description: "Until 31.12.2025 IST midnight",
+      description: "Until 31.12.2030 IST midnight",
       color: "text-red-500"
     },
     {
