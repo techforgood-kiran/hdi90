@@ -43,7 +43,7 @@ export const AnimatedWhyHDI = () => {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <DollarSign className="w-5 h-5 text-green-400 mr-2" />
-                      <span>India: #5 World Economy</span>
+                      <span>India: #4 World Economy as of September 2025</span>
                     </div>
                     <div className="text-lg font-semibold text-hdi-gold">$4 Trillion GDP</div>
                   </div>
@@ -57,7 +57,7 @@ export const AnimatedWhyHDI = () => {
                   <div className="space-y-2">
                     <div className="flex items-center">
                       <Heart className="w-5 h-5 text-red-400 mr-2" />
-                      <span>India: Ranked #132/191</span>
+                      <span>India: Ranked #132/193</span>
                     </div>
                     <div className="text-lg font-semibold text-red-400">HDI Score: 0.633</div>
                   </div>
