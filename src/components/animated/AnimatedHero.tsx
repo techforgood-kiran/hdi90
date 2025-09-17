@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hdi-hero.jpg";
 
 export const AnimatedHero = () => {
@@ -56,10 +57,12 @@ export const AnimatedHero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg transition-all hover:scale-105">
-            Join the Movement
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <Link to="/join-movement">
+            <Button size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg transition-all hover:scale-105">
+              Join the Movement
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </motion.div>
         
         {/* Stats */}
