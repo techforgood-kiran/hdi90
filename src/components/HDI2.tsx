@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, GraduationCap, Smile, Leaf, Sparkles, Target } from "lucide-react";
+import { SDGIcon } from "@/components/SDGIcon";
 
 const HDI2 = () => {
   const pillars = [
@@ -129,15 +130,22 @@ const HDI2 = () => {
                       <Target className="w-4 h-4 text-hdi-blue mr-2" />
                       <span className="text-sm font-semibold text-hdi-navy">Aligned UN SDGs:</span>
                     </div>
-                    <div className="space-y-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {pillar.sdgs.map((sdg, sdgIndex) => (
-                        <div key={sdgIndex} className="flex items-start space-x-2">
-                          <Badge variant="outline" className="text-xs font-mono font-bold min-w-fit">
-                            {sdg.number}
-                          </Badge>
-                          <div className="flex-1 min-w-0">
-                            <div className="text-sm font-medium text-hdi-navy">{sdg.title}</div>
-                            <div className="text-xs text-muted-foreground">{sdg.focus}</div>
+                        <div key={sdgIndex} className="flex flex-col items-center text-center group">
+                          <div className="relative">
+                            <SDGIcon 
+                              number={sdg.number} 
+                              size="md" 
+                              className="transition-transform group-hover:scale-110 shadow-sm"
+                            />
+                            <div className="absolute -bottom-1 -right-1 bg-white text-xs font-bold text-hdi-navy rounded-full w-5 h-5 flex items-center justify-center border border-gray-200">
+                              {sdg.number}
+                            </div>
+                          </div>
+                          <div className="mt-2 min-h-0">
+                            <div className="text-xs font-medium text-hdi-navy leading-tight">{sdg.title}</div>
+                            <div className="text-xs text-muted-foreground leading-tight mt-1">{sdg.focus}</div>
                           </div>
                         </div>
                       ))}
