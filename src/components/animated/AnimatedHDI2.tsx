@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, GraduationCap, Smile, Leaf, Sparkles, Target } from "lucide-react";
 import { ParticleSystem } from "@/components/Canvas/ParticleSystem";
 import { useInView } from "react-intersection-observer";
+import { SDGIcon } from "@/components/SDGIcon";
 
 export const AnimatedHDI2 = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
   const y = useTransform(scrollProgress, [0, 1], [100, -100]);
@@ -218,7 +219,7 @@ export const AnimatedHDI2 = ({ scrollProgress }: { scrollProgress: MotionValue<n
                       {pillar.description}
                     </p>
                     
-                    {/* SDG Mapping with Animated Badges */}
+                     {/* SDG Mapping with Icons */}
                     <div className="mb-4">
                       <div className="flex items-center mb-3">
                         <motion.div
@@ -229,25 +230,29 @@ export const AnimatedHDI2 = ({ scrollProgress }: { scrollProgress: MotionValue<n
                         </motion.div>
                         <span className="text-sm font-semibold text-hdi-navy">Aligned UN SDGs:</span>
                       </div>
-                      <div className="space-y-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         {pillar.sdgs.map((sdg, sdgIndex) => (
                           <motion.div 
                             key={sdgIndex} 
-                            className="flex items-start space-x-2"
-                            initial={{ x: -20, opacity: 0 }}
-                            animate={inView ? { x: 0, opacity: 1 } : {}}
-                            transition={{ delay: 0.5 + sdgIndex * 0.1 }}
-                            whileHover={{ x: 5 }}
+                            className="flex flex-col items-center text-center group"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={inView ? { scale: 1, opacity: 1 } : {}}
+                            transition={{ delay: 0.5 + sdgIndex * 0.1, duration: 0.4 }}
+                            whileHover={{ scale: 1.05 }}
                           >
-                            <Badge 
-                              variant="outline" 
-                              className="text-xs font-mono font-bold min-w-fit hover:bg-hdi-blue hover:text-white transition-colors"
-                            >
-                              {sdg.number}
-                            </Badge>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-sm font-medium text-hdi-navy">{sdg.title}</div>
-                              <div className="text-xs text-muted-foreground">{sdg.focus}</div>
+                            <div className="relative">
+                              <SDGIcon 
+                                number={sdg.number} 
+                                size="md" 
+                                className="transition-transform group-hover:scale-110 shadow-sm"
+                              />
+                              <div className="absolute -bottom-1 -right-1 bg-white text-xs font-bold text-hdi-navy rounded-full w-5 h-5 flex items-center justify-center border border-gray-200">
+                                {sdg.number}
+                              </div>
+                            </div>
+                            <div className="mt-2 min-h-0">
+                              <div className="text-xs font-medium text-hdi-navy leading-tight">{sdg.title}</div>
+                              <div className="text-xs text-muted-foreground leading-tight mt-1">{sdg.focus}</div>
                             </div>
                           </motion.div>
                         ))}
