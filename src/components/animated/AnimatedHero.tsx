@@ -51,7 +51,7 @@ export const AnimatedHero = () => {
         </motion.p>
         
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          className="flex justify-center items-center mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -59,9 +59,6 @@ export const AnimatedHero = () => {
           <Button size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg transition-all hover:scale-105">
             Join the Movement
             <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg transition-all hover:scale-105">
-            Understanding HDI
           </Button>
         </motion.div>
         

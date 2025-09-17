@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, GraduationCap, Smile, Leaf, Sparkles, Target } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Heart, GraduationCap, Smile, Leaf, Sparkles, Target, ArrowRight } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import { SDGIcon } from "@/components/SDGIcon";
 
@@ -210,10 +211,18 @@ export const AnimatedHDI2 = () => {
                 HDI 2.0 rejects misleading statistical averages that hide suffering behind numbers. 
                 Instead, we measure the actual well-being of those society has forgotten.
               </p>
-              <p className="text-lg leading-relaxed opacity-90">
+              <p className="text-lg leading-relaxed opacity-90 mb-6">
                 Modern technology and AI enable us to truly see and serve the most vulnerable, 
                 making authentic development possible for the first time in human history.
               </p>
+              <Button 
+                size="lg" 
+                className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg shadow-medium"
+                onClick={() => window.location.href = '/hdi-calculator'}
+              >
+                Understanding HDI 2.0
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
             </CardContent>
           </Card>
         </motion.div>
