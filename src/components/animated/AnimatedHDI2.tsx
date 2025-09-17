@@ -213,7 +213,7 @@ export const AnimatedHDI2 = () => {
               </p>
               <p className="text-lg leading-relaxed opacity-90 mb-6">
                 Modern technology and AI enable us to truly see and serve the most vulnerable, 
-                making authentic development possible for the first time in human history.
+                making authentic development possible for the first time in human history. At the Individual data point level
               </p>
               <Button 
                 size="lg" 
