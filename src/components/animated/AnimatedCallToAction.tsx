@@ -6,7 +6,10 @@ import { useInView } from "react-intersection-observer";
 
 export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
   const y = useTransform(scrollProgress, [0, 1], [100, -50]);
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const opacity = useTransform(scrollProgress, [0.7, 1], [0, 1]);
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
+  
+  console.log('AnimatedCallToAction inView:', inView);
 
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -58,7 +61,10 @@ export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: Motio
     <motion.section 
       ref={ref}
       className="py-20 bg-gradient-hero relative overflow-hidden"
-      style={{ y }}
+      style={{ y, opacity }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       {/* Multi-layered Particle Systems */}
       <ParticleSystem scrollProgress={0.8} theme="health" />
@@ -68,9 +74,9 @@ export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: Motio
       
       <div className="container mx-auto px-4 text-center text-white relative z-10">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
           {/* Urgency Indicators */}
           <motion.div 

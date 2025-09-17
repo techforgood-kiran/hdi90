@@ -6,7 +6,11 @@ import { useInView } from "react-intersection-observer";
 
 export const AnimatedWhyHDI = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
   const y = useTransform(scrollProgress, [0, 1], [100, -100]);
-  const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const opacity = useTransform(scrollProgress, [0.2, 0.5], [0, 1]);
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
+
+  // Add debug logging
+  console.log('AnimatedWhyHDI inView:', inView);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,7 +39,10 @@ export const AnimatedWhyHDI = ({ scrollProgress }: { scrollProgress: MotionValue
     <motion.section 
       ref={ref}
       className="py-20 bg-background relative overflow-hidden"
-      style={{ y }}
+      style={{ y, opacity }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       {/* Background Particles */}
       <ParticleSystem scrollProgress={0.5} theme="education" />
@@ -43,19 +50,23 @@ export const AnimatedWhyHDI = ({ scrollProgress }: { scrollProgress: MotionValue
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h2 
             className="text-4xl md:text-5xl font-bold mb-6 text-hdi-navy"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             Why not GDP? Why HDI?
           </motion.h2>
           <motion.p 
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
             Understanding the difference between economic growth and true human development
           </motion.p>
@@ -64,9 +75,9 @@ export const AnimatedWhyHDI = ({ scrollProgress }: { scrollProgress: MotionValue
         {/* India Example with Advanced Animations */}
         <motion.div 
           className="max-w-6xl mx-auto mb-16"
-          variants={itemVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <Card className="p-8 shadow-medium bg-gradient-card overflow-hidden relative">
             {/* Animated Background Elements */}

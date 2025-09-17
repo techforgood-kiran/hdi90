@@ -7,7 +7,10 @@ import { useInView } from "react-intersection-observer";
 
 export const AnimatedHDI2 = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
   const y = useTransform(scrollProgress, [0, 1], [100, -100]);
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const opacity = useTransform(scrollProgress, [0.5, 0.8], [0, 1]);
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: false });
+  
+  console.log('AnimatedHDI2 inView:', inView);
 
   const pillars = [
     {
@@ -104,16 +107,19 @@ export const AnimatedHDI2 = ({ scrollProgress }: { scrollProgress: MotionValue<n
     <motion.section 
       ref={ref}
       className="py-20 bg-hdi-light-blue/30 relative overflow-hidden"
-      style={{ y }}
+      style={{ y, opacity }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <ParticleSystem scrollProgress={0.7} theme="happiness" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
           className="text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div 
             className="flex items-center justify-center mb-4"
