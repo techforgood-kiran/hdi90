@@ -81,11 +81,9 @@ export const AnimatedWhyHDI = () => {
               Our Vision: Systems Thinking for Holistic Development
             </h3>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We believe in <strong className="text-hdi-blue">genuine well-being</strong> over GDP metrics alone. 
-              Our commitment extends to <strong className="text-hdi-navy">systems thinking</strong>, 
-              <strong className="text-hdi-green"> ethical business practices</strong>, 
-              and <strong className="text-hdi-gold">circular economy principles</strong> 
-              that create lasting positive impact for all.
+              We believe in genuine well-being over GDP metrics alone. 
+              Our commitment extends to systems thinking, ethical business practices, 
+              and circular economy principles that create lasting positive impact for all.
             </p>
           </div>
         </motion.div>
