@@ -5,8 +5,11 @@ import sdg4 from "@/assets/sdg-icons/sdg-4.png";
 import sdg5 from "@/assets/sdg-icons/sdg-5.png";
 import sdg6 from "@/assets/sdg-icons/sdg-6.png";
 import sdg8 from "@/assets/sdg-icons/sdg-8.png";
+import sdg9 from "@/assets/sdg-icons/sdg-9.png";
+import sdg10 from "@/assets/sdg-icons/sdg-10.png";
 import sdg11 from "@/assets/sdg-icons/sdg-11.png";
 import sdg13 from "@/assets/sdg-icons/sdg-13.png";
+import sdg16 from "@/assets/sdg-icons/sdg-16.png";
 import sdg17 from "@/assets/sdg-icons/sdg-17.png";
 
 interface SDGIconProps {
@@ -26,9 +29,9 @@ const sdgIconMap: Record<string, string> = {
   "7": "/api/placeholder/64/64", // Placeholder for missing icons
   "8": sdg8,
   "8.6": sdg8,
-  "9": "/api/placeholder/64/64",
-  "9.4": "/api/placeholder/64/64",
-  "10": "/api/placeholder/64/64",
+  "9": sdg9,
+  "9.4": sdg9,
+  "10": sdg10,
   "11": sdg11,
   "11.6": sdg11,
   "12": "/api/placeholder/64/64",
@@ -36,7 +39,7 @@ const sdgIconMap: Record<string, string> = {
   "13": sdg13,
   "14": "/api/placeholder/64/64",
   "15": "/api/placeholder/64/64",
-  "16": "/api/placeholder/64/64",
+  "16": sdg16,
   "17": sdg17,
   "17.6": sdg17,
 };
