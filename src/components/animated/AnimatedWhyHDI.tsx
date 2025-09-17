@@ -165,39 +165,6 @@ export const AnimatedWhyHDI = ({ scrollProgress }: { scrollProgress: MotionValue
           </Card>
         </motion.div>
         
-        {/* Key Differences with Staggered Animation */}
-        <motion.div 
-          className="grid md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          {[
-            { icon: Heart, title: "Health", description: "Life expectancy, healthcare access, and overall well-being for every citizen", color: "text-hdi-blue", bgColor: "bg-hdi-blue/10" },
-            { icon: GraduationCap, title: "Education", description: "Quality education access, literacy rates, and skills development opportunities", color: "text-hdi-green", bgColor: "bg-hdi-green/10" },
-            { icon: DollarSign, title: "Income Equity", description: "Fair distribution of wealth and economic opportunities for sustainable growth", color: "text-hdi-gold", bgColor: "bg-hdi-gold/10" }
-          ].map((item, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className="p-6 text-center shadow-soft hover:shadow-medium transition-all h-full group">
-                <CardContent className="p-0">
-                  <motion.div 
-                    className={`w-16 h-16 ${item.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <item.icon className={`w-8 h-8 ${item.color}`} />
-                  </motion.div>
-                  <h3 className="text-xl font-bold mb-3 text-hdi-navy group-hover:text-hdi-blue transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
         
         {/* Vision Statement */}
         <motion.div 
