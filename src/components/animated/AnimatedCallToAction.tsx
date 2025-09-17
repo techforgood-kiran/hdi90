@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Clock, Target } from "lucide-react";
 import { ParticleSystem } from "@/components/Canvas/ParticleSystem";
 import { useInView } from "react-intersection-observer";
+import { CountdownTimer } from "@/components/CountdownTimer";
 
 export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: MotionValue<number> }) => {
   const y = useTransform(scrollProgress, [0, 1], [100, -50]);
@@ -39,8 +40,8 @@ export const AnimatedCallToAction = ({ scrollProgress }: { scrollProgress: Motio
   const urgencyItems = [
     {
       icon: Clock,
-      title: "6 Years Remaining",
-      description: "Until 31.12.2030 deadline",
+      title: <CountdownTimer />,
+      description: "Until 31.12.2025 IST midnight",
       color: "text-red-500"
     },
     {
