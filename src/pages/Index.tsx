@@ -1,17 +1,24 @@
 import { useEffect } from "react";
-import { motion, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import { AnimatedHero } from "@/components/animated/AnimatedHero";
 import { AnimatedWhyHDI } from "@/components/animated/AnimatedWhyHDI";
 import { AnimatedHDI2 } from "@/components/animated/AnimatedHDI2";
 import { AnimatedCallToAction } from "@/components/animated/AnimatedCallToAction";
-import { initSmoothScrolling } from "@/hooks/useScrollController";
+import { useScrollController, initSmoothScrolling } from "@/hooks/useScrollController";
 
 const Index = () => {
-  const scrollProgress = useMotionValue(0);
+  const { scrollYProgress } = useScrollController();
 
   useEffect(() => {
     initSmoothScrolling();
-  }, []);
+    
+    // Debug scroll progress
+    const unsubscribe = scrollYProgress.onChange((latest) => {
+      console.log('Scroll progress:', latest);
+    });
+    
+    return unsubscribe;
+  }, [scrollYProgress]);
 
   return (
     <motion.div 
@@ -20,10 +27,10 @@ const Index = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <AnimatedHero scrollProgress={scrollProgress} />
-      <AnimatedWhyHDI scrollProgress={scrollProgress} />
-      <AnimatedHDI2 scrollProgress={scrollProgress} />
-      <AnimatedCallToAction scrollProgress={scrollProgress} />
+      <AnimatedHero scrollProgress={scrollYProgress} />
+      <AnimatedWhyHDI scrollProgress={scrollYProgress} />
+      <AnimatedHDI2 scrollProgress={scrollYProgress} />
+      <AnimatedCallToAction scrollProgress={scrollYProgress} />
     </motion.div>
   );
 };
