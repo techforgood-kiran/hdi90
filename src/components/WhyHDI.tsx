@@ -65,44 +65,6 @@ const WhyHDI = () => {
           </Card>
         </div>
         
-        {/* Key Differences */}
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="p-6 text-center shadow-soft hover:shadow-medium transition-all">
-            <CardContent className="p-0">
-              <div className="w-16 h-16 bg-hdi-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-hdi-blue" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-hdi-navy">Health</h3>
-              <p className="text-muted-foreground">
-                Life expectancy, healthcare access, and overall well-being for every citizen
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="p-6 text-center shadow-soft hover:shadow-medium transition-all">
-            <CardContent className="p-0">
-              <div className="w-16 h-16 bg-hdi-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <GraduationCap className="w-8 h-8 text-hdi-green" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-hdi-navy">Education</h3>
-              <p className="text-muted-foreground">
-                Quality education access, literacy rates, and skills development opportunities
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="p-6 text-center shadow-soft hover:shadow-medium transition-all">
-            <CardContent className="p-0">
-              <div className="w-16 h-16 bg-hdi-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <DollarSign className="w-8 h-8 text-hdi-gold" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-hdi-navy">Income Equity</h3>
-              <p className="text-muted-foreground">
-                Fair distribution of wealth and economic opportunities for sustainable growth
-              </p>
-            </CardContent>
-          </Card>
-        </div>
         
         {/* Vision Statement */}
         <div className="mt-16 text-center">
