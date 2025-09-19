@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import HealthyHumanCapital from "./pages/missions/HealthyHumanCapital";
 import LearningToLead from "./pages/missions/LearningToLead";
 import FlourishingSocieties from "./pages/missions/FlourishingSocieties";
+import MissionKrishi from "./pages/missions/MissionKrishi";
 import RegenerateProsper from "./pages/missions/RegenerateProsper";
 import CrossMissionEnablers from "./pages/missions/CrossMissionEnablers";
 import Principles from "./pages/Principles";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/missions/healthy-human-capital" element={<HealthyHumanCapital />} />
           <Route path="/missions/learning-to-lead" element={<LearningToLead />} />
           <Route path="/missions/flourishing-societies" element={<FlourishingSocieties />} />
+          <Route path="/missions/krishi" element={<MissionKrishi />} />
           <Route path="/missions/regenerate-prosper" element={<RegenerateProsper />} />
           <Route path="/missions/enablers" element={<CrossMissionEnablers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
