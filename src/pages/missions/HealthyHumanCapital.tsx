@@ -15,7 +15,14 @@ import {
   Brain,
   Baby,
   Activity,
-  Lightbulb
+  Lightbulb,
+  Leaf,
+  FlowerIcon,
+  Zap,
+  Music,
+  Sun,
+  Star,
+  Sparkles
 } from 'lucide-react';
 import { SDGIcon } from '@/components/SDGIcon';
 import Navbar from '@/components/Navbar';
@@ -338,6 +345,171 @@ export default function HealthyHumanCapital() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* SHUNSY-A-PATCH Healing Modalities for Movement Builders */}
+      <section className="py-20 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6">
+              <Star className="w-5 h-5" />
+              <span className="font-semibold">Movement Builder Tier Exclusive</span>
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">SHUNSY-A-PATCH</h2>
+            <p className="text-xl text-gray-600 mb-2">Holistic Disease Cure Through Lifestyle Coaching</p>
+            <p className="text-lg text-gray-500 max-w-4xl mx-auto">
+              We coach and guide all "Movement Builder" tier users to cure diseases through 
+              comprehensive lifestyle changes integrating ancient wisdom with modern science
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Satvic Plant Based Diet",
+                subtitle: "TLT Subah Saraf Method",
+                description: "Pure plant-based nutrition from satvicmovement.org for cellular healing and vitality",
+                icon: Leaf,
+                gradient: "from-green-500 to-emerald-600"
+              },
+              {
+                title: "German Homeopathy",
+                subtitle: "Deutschland Protocols",
+                description: "Precise micro-dose healing based on German homeopathic principles and research",
+                icon: FlowerIcon,
+                gradient: "from-blue-500 to-indigo-600"
+              },
+              {
+                title: "Unani Medicine",
+                subtitle: "Islamic & Sufi Traditions",
+                description: "Arabic and Indian Sufi master formulations for constitutional healing",
+                icon: Star,
+                gradient: "from-purple-500 to-violet-600"
+              },
+              {
+                title: "Naturopathy & Fasting",
+                subtitle: "Natural Healing Force",
+                description: "Therapeutic fasting protocols and natural healing methodologies",
+                icon: Sun,
+                gradient: "from-orange-500 to-amber-600"
+              },
+              {
+                title: "Siddha Medicine",
+                subtitle: "Tamil & Tribal Wisdom",
+                description: "Ancient Indian tribal medicine from Tamil Nadu, Andaman & Andhra Pradesh traditions",
+                icon: Sparkles,
+                gradient: "from-red-500 to-pink-600"
+              },
+              {
+                title: "Yoga & Divine Unity",
+                subtitle: "Tao Life Force Connection",
+                description: "Becoming one with the Tao/Life force/Divine within through yogic practices",
+                icon: Heart,
+                gradient: "from-rose-500 to-pink-600"
+              },
+              {
+                title: "Holistic Allopathy",
+                subtitle: "Mayo Clinic Protocols",
+                description: "Best of western holistic medicine with Mayo Clinic USA treatment protocols",
+                icon: Stethoscope,
+                gradient: "from-cyan-500 to-blue-600"
+              },
+              {
+                title: "Physiotherapy & Chiropractic",
+                subtitle: "Lymph System Mobilization",
+                description: "Lymphatic activation and post-surgical rehabilitation through bodywork",
+                icon: Activity,
+                gradient: "from-teal-500 to-green-600"
+              },
+              {
+                title: "Ayurveda Panchakarma",
+                subtitle: "Kottakal + Mayo Clinic R&D",
+                description: "Joint venture protocols between Arya Vaidya Shala and Mayo Clinic",
+                icon: Leaf,
+                gradient: "from-yellow-500 to-orange-600"
+              },
+              {
+                title: "Tai Chi Mastery",
+                subtitle: "Chi Healing & Nature",
+                description: "Engage the Chi for self-healing and positive influence on natural forces",
+                icon: Zap,
+                gradient: "from-indigo-500 to-purple-600"
+              },
+              {
+                title: "Chinese Meridian Science",
+                subtitle: "Energy Channel Therapy",
+                description: "Traditional Chinese meridian system for energy flow and healing",
+                icon: Target,
+                gradient: "from-emerald-500 to-teal-600"
+              },
+              {
+                title: "Healing Music Therapy",
+                subtitle: "Ragas & Baroque Harmonics",
+                description: "Indian Ragas and European Baroque music for therapeutic sound healing",
+                icon: Music,
+                gradient: "from-violet-500 to-purple-600"
+              }
+            ].map((modality, index) => {
+              const IconComponent = modality.icon;
+              return (
+                <motion.div
+                  key={modality.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                    <div className={`h-2 bg-gradient-to-r ${modality.gradient}`}></div>
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className={`p-3 bg-gradient-to-r ${modality.gradient} rounded-lg`}>
+                          <IconComponent className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-gray-900 mb-1">{modality.title}</h3>
+                          <p className="text-sm font-medium text-purple-600 mb-2">{modality.subtitle}</p>
+                          <p className="text-gray-600 text-sm leading-relaxed">{modality.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-center mt-12"
+          >
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto border border-white/20 shadow-xl">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Heart className="w-8 h-8 text-red-500" />
+                <h3 className="text-2xl font-bold text-gray-900">Integrated Healing Journey</h3>
+                <Heart className="w-8 h-8 text-red-500" />
+              </div>
+              <p className="text-lg text-gray-700 mb-6">
+                Our Movement Builder members receive personalized coaching that combines these ancient and modern healing modalities 
+                into a comprehensive lifestyle transformation program. Each approach is carefully integrated to address the root 
+                causes of disease while supporting the body's natural healing intelligence.
+              </p>
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg"
+              >
+                Become a Movement Builder
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
