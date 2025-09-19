@@ -70,94 +70,54 @@ function ImpactShowcase() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          {/* Impact Cards */}
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
-            {impactStories.map((story, index) => {
-              const IconComponent = story.icon;
-              return (
-                <motion.div
-                  key={story.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`relative group cursor-pointer ${activeStory.id === story.id ? 'ring-2 ring-white/50' : ''}`}
-                  onClick={() => setActiveStory(story)}
-                >
-                  <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 overflow-hidden">
-                    <div className="relative h-48">
-                      <img 
-                        src={story.image} 
-                        alt={story.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className={`absolute inset-0 bg-gradient-to-t ${story.color} opacity-80`}></div>
-                      <div className="absolute top-4 left-4">
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-xl font-bold text-white mb-1">{story.title}</h3>
-                        <div className="flex items-center gap-2 text-white/90 text-sm">
-                          <Clock className="w-4 h-4" />
-                          <span>{story.commitment}</span>
-                        </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {impactStories.map((story, index) => {
+            const IconComponent = story.icon;
+            return (
+              <motion.div
+                key={story.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 overflow-hidden">
+                  <div className="relative h-48">
+                    <img 
+                      src={story.image} 
+                      alt={story.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${story.color} opacity-80`}></div>
+                    <div className="absolute top-4 left-4">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-xl font-bold text-white mb-1">{story.title}</h3>
+                      <div className="flex items-center gap-2 text-white/90 text-sm">
+                        <Clock className="w-4 h-4" />
+                        <span>{story.commitment}</span>
                       </div>
                     </div>
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-start mb-3">
-                        <div className="text-2xl font-bold text-white">{story.impact}</div>
-                        <div className="text-right text-sm text-gray-300">
-                          <div>{story.volunteers} volunteers</div>
-                          <div>active now</div>
-                        </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start mb-3">
+                      <div className="text-2xl font-bold text-white">{story.impact}</div>
+                      <div className="text-right text-sm text-gray-300">
+                        <div>{story.volunteers} volunteers</div>
+                        <div>active now</div>
                       </div>
-                      <p className="text-gray-300 text-sm">{story.story}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Active Story Detail */}
-          <div className="lg:col-span-1">
-            <motion.div
-              key={activeStory.id}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="sticky top-8"
-            >
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 p-8">
-                <div className="text-center mb-6">
-                  <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${activeStory.color} mb-4`}>
-                    <activeStory.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{activeStory.title}</h3>
-                  <p className="text-gray-300">{activeStory.story}</p>
-                </div>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Time Commitment</span>
-                    <span className="text-white font-semibold">{activeStory.commitment}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Active Volunteers</span>
-                    <span className="text-white font-semibold">{activeStory.volunteers}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Total Impact</span>
-                    <span className="text-white font-semibold">{activeStory.impact}</span>
-                  </div>
-                </div>
-
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold py-3">
-                  Join {activeStory.title}
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Card>
-            </motion.div>
-          </div>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4">{story.story}</p>
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold">
+                      Join {story.title}
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Call to Action */}
