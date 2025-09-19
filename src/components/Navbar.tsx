@@ -33,13 +33,13 @@ const Navbar = () => {
   return (
     <nav className="bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <div 
             className="flex items-center cursor-pointer" 
             onClick={() => navigate('/')}
           >
-            <img src={hdi90Logo} alt="HDI90 Logo" className="h-16 w-16" />
+            <img src={hdi90Logo} alt="HDI90 Logo" className="h-20 w-20" />
           </div>
 
           {/* Desktop Navigation */}
