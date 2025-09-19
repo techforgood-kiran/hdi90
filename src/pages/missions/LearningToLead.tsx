@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BookOpen, Users, Laptop, Target, Clock, Award, TrendingUp } from 'lucide-react';
+import { GraduationCap, BookOpen, Users, Laptop, Target, Clock, Award, TrendingUp, ExternalLink } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 export default function LearningToLead() {
@@ -26,6 +26,13 @@ export default function LearningToLead() {
       title: "Digital Learning Backbone",
       description: "Digital learning platform + low-tech offline packages for rural inclusion",
       icon: Laptop
+    },
+    {
+      title: "Aurobindo Kalam AI Gurukul",
+      description: "Advanced AI-powered learning platform for next-generation education",
+      icon: ExternalLink,
+      isLink: true,
+      url: "https://www.aurobindokalam.org"
     }
   ];
 
@@ -73,22 +80,10 @@ export default function LearningToLead() {
             <p className="text-xl text-white/90 mb-4">
               "Education for Capability & Character"
             </p>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Move whole-population learning outcomes and opportunity access to world-class levels 
               so the Education Score contributes to 0.90.
             </p>
-            <Button 
-              asChild
-              className="bg-white text-blue-600 hover:bg-white/90"
-            >
-              <a 
-                href="https://www.aurobindokalam.org" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Aurobindo Kalam AI Gurukul
-              </a>
-            </Button>
           </motion.div>
         </div>
       </section>
@@ -107,6 +102,39 @@ export default function LearningToLead() {
           <div className="grid md:grid-cols-2 gap-6">
             {interventions.map((intervention, index) => {
               const IconComponent = intervention.icon;
+              const isLink = intervention.isLink;
+              
+              if (isLink) {
+                return (
+                  <motion.div
+                    key={intervention.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="h-full hover:shadow-lg transition-all duration-300 cursor-pointer border-orange-200 bg-gradient-to-r from-yellow-50 to-orange-50">
+                      <CardContent className="p-6">
+                        <a 
+                          href={intervention.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-start gap-4 group"
+                        >
+                          <div className="p-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg group-hover:from-yellow-500 group-hover:to-orange-600 transition-all">
+                            <IconComponent className="w-6 h-6 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-semibold mb-2 text-orange-800 group-hover:text-orange-900">{intervention.title}</h3>
+                            <p className="text-orange-700 mb-2">{intervention.description}</p>
+                            <span className="text-sm text-orange-600 font-medium">Visit Platform →</span>
+                          </div>
+                        </a>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              }
+              
               return (
                 <motion.div
                   key={intervention.title}
