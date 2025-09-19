@@ -28,24 +28,24 @@ const Index = () => {
       <Navbar />
       
       {/* Evidence-Based Impact Section */}
-      <section className="bg-gradient-card py-16 px-6">
+      <section className="bg-gradient-card py-12 sm:py-16 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
           <motion.div 
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
               Beyond GDP: Measuring What Actually Matters
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
               Traditional economic indicators fail to capture human flourishing. HDI 2.0 provides a science-backed framework 
               that measures health, education, happiness, and environmental impact in one actionable index.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,41 +99,41 @@ const Index = () => {
           </div>
 
           <motion.div 
-            className="bg-primary/5 rounded-xl p-8 mb-16"
+            className="bg-primary/5 rounded-xl p-6 sm:p-8 mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold mb-4">The HDI 2.0 Difference</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">The HDI 2.0 Difference</h3>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-hdi-green" />
-                    <span>Captures health beyond life expectancy using biomarkers and lifestyle factors</span>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-hdi-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base">Captures health beyond life expectancy using biomarkers and lifestyle factors</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-hdi-green" />
-                    <span>Measures practical skills and competencies, not just years of schooling</span>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-hdi-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base">Measures practical skills and competencies, not just years of schooling</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-hdi-green" />
-                    <span>Integrates subjective well-being with objective quality of life indicators</span>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-hdi-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base">Integrates subjective well-being with objective quality of life indicators</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-hdi-green" />
-                    <span>Accounts for environmental footprint and positive environmental actions</span>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-hdi-green flex-shrink-0 mt-0.5" />
+                    <span className="text-sm sm:text-base">Accounts for environmental footprint and positive environmental actions</span>
                   </div>
                 </div>
               </div>
               <div className="text-center">
-                <Button size="lg" className="bg-hdi-blue hover:bg-hdi-blue/90 text-white" asChild>
+                <Button size="lg" className="bg-hdi-blue hover:bg-hdi-blue/90 text-white w-full sm:w-auto" asChild>
                   <Link to="/hdi-calculator">
                     Calculate Your HDI 2.0
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </Link>
                 </Button>
-                <p className="text-sm text-muted-foreground mt-3">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-3">
                   Free assessment • Evidence-based recommendations • Privacy protected
                 </p>
               </div>

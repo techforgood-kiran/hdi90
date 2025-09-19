@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
-    <section className="py-20 bg-gradient-hero">
+    <section className="py-16 sm:py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
-        <div className="text-center text-white mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center text-white mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Join This Movement
           </h2>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
             A principled commitment to achieve HDI 0.90 by 2030. 
             This work requires integrity, persistence, and genuine care for human dignity.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto mb-8 sm:mb-12">
           <Card className="bg-white/10 border-white/20 backdrop-blur-sm">
             <CardContent className="p-6 text-center text-white">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -50,21 +50,21 @@ const CallToAction = () => {
         </div>
 
         <div className="text-center">
-          <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Button 
               asChild
               size="lg" 
-              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg shadow-medium"
+              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg shadow-medium w-full sm:w-auto"
             >
               <Link to="/join-movement">
                 Make Your Commitment
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
             </Button>
             <Button 
               asChild
               size="lg" 
-              className="bg-hdi-navy hover:bg-hdi-navy/90 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-hdi-navy hover:bg-hdi-navy/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold w-full sm:w-auto"
             >
               <Link to="/principles">
                 Read Our Principles

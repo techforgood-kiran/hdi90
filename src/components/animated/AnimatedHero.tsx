@@ -30,7 +30,7 @@ export const AnimatedHero = () => {
         </motion.div>
         
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -42,7 +42,7 @@ export const AnimatedHero = () => {
         </motion.h1>
         
         <motion.p 
-          className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed opacity-90"
+          className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed opacity-90 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -52,22 +52,22 @@ export const AnimatedHero = () => {
         </motion.p>
         
         <motion.div 
-          className="flex justify-center items-center mb-12"
+          className="flex justify-center items-center mb-8 sm:mb-12 px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Link to="/join-movement">
-            <Button size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg transition-all hover:scale-105">
+            <Button size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg transition-all hover:scale-105 w-full sm:w-auto">
               Join the Movement
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
           </Link>
         </motion.div>
         
         {/* Stats */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -81,10 +81,10 @@ export const AnimatedHero = () => {
               key={index}
               className="text-center transition-transform hover:scale-105 cursor-pointer"
             >
-              <div className="text-3xl md:text-4xl font-bold text-hdi-gold mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-hdi-gold mb-1 sm:mb-2">
                 {stat.value}
               </div>
-              <div className="text-lg opacity-90">{stat.label}</div>
+              <div className="text-base sm:text-lg opacity-90">{stat.label}</div>
             </div>
           ))}
         </motion.div>
