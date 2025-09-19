@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Navbar from "@/components/Navbar";
 
 /**
  * HDI2Landing — React + Tailwind component
@@ -36,7 +37,9 @@ const HDI2Landing = ({ initial = { health: 0.76, education: 0.7, happiness: 0.68
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <Navbar />
+      <div className="max-w-6xl mx-auto p-6">
       {/* Header */}
       <header className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
@@ -189,6 +192,7 @@ const HDI2Landing = ({ initial = { health: 0.76, education: 0.7, happiness: 0.68
 
       {/* Footer */}
       <footer className="mt-10 text-sm text-slate-500">© {new Date().getFullYear()} HDI 2.0 — Built for research and policy teams</footer>
+      </div>
     </div>
   );
 };

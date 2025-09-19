@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Leaf, GraduationCap, Clock, ArrowRight } from "lucide-react";
+import Navbar from '@/components/Navbar';
 
 const impactStories = [
   {
@@ -220,6 +221,7 @@ export default function JoinMovement() {
 
   return (
     <div className="bg-gradient-to-b from-white to-gray-100 text-gray-900">
+      <Navbar />
       {/* Hero Section */}
       <section className="text-center py-16 px-6">
         <motion.h1

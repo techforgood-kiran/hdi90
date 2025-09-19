@@ -5,6 +5,7 @@ import { AnimatedWhyHDI } from "@/components/animated/AnimatedWhyHDI";
 import { AnimatedHDI2 } from "@/components/animated/AnimatedHDI2";
 import { AnimatedCallToAction } from "@/components/animated/AnimatedCallToAction";
 import { useScrollController, initSmoothScrolling } from "@/hooks/useScrollController";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   const { scrollYProgress } = useScrollController();
@@ -27,6 +28,7 @@ const Index = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      <Navbar />
       <AnimatedHero />
       <AnimatedWhyHDI />
       <AnimatedHDI2 />
