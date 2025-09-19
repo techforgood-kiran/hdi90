@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const navItems = [
     { to: '/', label: 'Home' },
-    { to: '/hdi-calculator', label: 'Calculator' },
+    { to: '/hdi-calculator', label: 'HDI 2.0 Calculator' },
     { to: '/methodology', label: 'Methodology' },
   ];
 
