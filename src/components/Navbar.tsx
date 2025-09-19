@@ -25,7 +25,7 @@ const Navbar = () => {
     { to: '/missions/healthy-human-capital', label: 'Healthy Human Capital' },
     { to: '/missions/learning-to-lead', label: 'Learning to Lead' },
     { to: '/missions/flourishing-societies', label: 'Flourishing Societies' },
-    { to: '/missions/krishi', label: 'Mission Krishi' },
+    { to: '/missions/krishi', label: 'FarmerFirst' },
     { to: '/missions/regenerate-prosper', label: 'Regenerate & Prosper' },
     { to: '/missions/enablers', label: 'Cross-Mission Enablers' },
   ];

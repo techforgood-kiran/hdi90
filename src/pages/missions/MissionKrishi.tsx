@@ -146,7 +146,7 @@ export default function MissionKrishi() {
               <SDGIcon number="15" size="md" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Mission Krishi
+              FarmerFirst
             </h1>
             <p className="text-xl text-white/90 mb-4">
               "Food Freedom Through Village Sovereignty"
