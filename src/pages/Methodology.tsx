@@ -66,9 +66,6 @@ export default function Methodology() {
               <p className="mt-4 text-lg text-muted-foreground">HDI 2.0 blends health, education, happiness, and environmental impact into a transparent, actionable index. Designed for individuals, communities, and policymakers who want meaningful, measurable improvement.</p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button size="lg" onClick={() => navigate('/hdi-calculator')}>
-                  Get my HDI 2.0
-                </Button>
                 <Button variant="outline" size="lg">
                   Request a demo
                 </Button>

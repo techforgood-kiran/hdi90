@@ -53,7 +53,6 @@ const HDI2Landing = ({ initial = { health: 0.76, education: 0.7, happiness: 0.68
         </div>
 
         <div className="flex items-center gap-3">
-          <button onClick={() => setShowModal(true)} className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg shadow">Get my HDI</button>
           <button onClick={() => window.location.href = '/methodology'} className="border px-4 py-2 rounded-lg">Methodology</button>
         </div>
       </header>
@@ -162,9 +161,6 @@ const HDI2Landing = ({ initial = { health: 0.76, education: 0.7, happiness: 0.68
             ))}
           </div>
 
-          <div>
-            <button onClick={() => alert('Exported: PDF / CSV (demo)')} className="w-full bg-sky-600 text-white py-2 rounded">Export report</button>
-          </div>
         </aside>
       </div>
 
