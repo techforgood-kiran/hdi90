@@ -2,118 +2,116 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Users, Leaf, GraduationCap, Clock, ArrowRight } from "lucide-react";
+import { Heart, Users, Leaf, GraduationCap, Clock, ArrowRight, Award, TrendingUp, Shield } from "lucide-react";
 import Navbar from '@/components/Navbar';
 
-const impactStories = [
+const impactAreas = [
   {
     id: 'health',
     icon: Heart,
-    title: 'Health Champions',
-    commitment: '30 min/week',
-    impact: '2,847 people screened',
-    story: 'Remote health monitoring in rural communities',
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80',
-    color: 'from-red-500 to-pink-500',
+    title: 'Health Systems',
+    commitment: '2-3 hours/week',
+    impact: 'Evidence-based preventive care',
+    description: 'Support community health monitoring, wellness education, and access to preventive screenings in underserved areas.',
+    metrics: 'Target: Improve HDI health scores by 15% in pilot communities',
     volunteers: 156
   },
   {
     id: 'education',
     icon: GraduationCap,
-    title: 'Learning Facilitators',
-    commitment: '45 min/week',
-    impact: '1,234 students mentored',
-    story: 'Digital literacy programs for underserved youth',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80',
-    color: 'from-blue-500 to-cyan-500',
+    title: 'Learning Systems',
+    commitment: '2-4 hours/week',
+    impact: 'Skills-based education',
+    description: 'Facilitate practical learning programs focusing on literacy, numeracy, critical thinking, and vocational skills.',
+    metrics: 'Target: 90% completion rate in digital literacy programs',
     volunteers: 289
   },
   {
     id: 'environment',
     icon: Leaf,
-    title: 'Eco Warriors',
-    commitment: '1 hour/week',
-    impact: '15,678 trees planted',
-    story: 'Community-led environmental restoration projects',
-    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80',
-    color: 'from-green-500 to-emerald-500',
+    title: 'Environmental Systems',
+    commitment: '1-3 hours/week',
+    impact: 'Sustainable practices',
+    description: 'Drive local environmental restoration, renewable energy adoption, and circular economy initiatives.',
+    metrics: 'Target: Carbon neutral communities by 2028',
     volunteers: 423
   },
   {
     id: 'happiness',
     icon: Users,
-    title: 'Wellbeing Guides',
-    commitment: '20 min/week',
-    impact: '892 support circles formed',
-    story: 'Mental health and community resilience building',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80',
-    color: 'from-purple-500 to-indigo-500',
+    title: 'Community Systems',
+    commitment: '1-2 hours/week',
+    impact: 'Well-being support',
+    description: 'Build resilient communities through mental health support, social connection, and collective problem-solving.',
+    metrics: 'Target: 80% improvement in community well-being indicators',
     volunteers: 334
   }
 ];
 
-function ImpactShowcase() {
-  const [activeStory, setActiveStory] = useState(impactStories[0]);
-
+function SystemsApproach() {
   return (
-    <section className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 px-6">
+    <section className="bg-gradient-to-br from-hdi-navy to-hdi-blue text-white py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h2 className="text-4xl font-extrabold mb-6">
-            Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">2 Hours a Week</span> Changes Lives
+          <h2 className="text-4xl font-bold mb-6">
+            Systems Change Through <span className="text-hdi-gold">Collective Action</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Real volunteers. Real impact. Real transformation happening right now across four pillars of human development.
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            Real impact requires systemic intervention. Our volunteers work across four interconnected systems 
+            to drive measurable progress toward HDI 2.0 targets by 2030.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {impactStories.map((story, index) => {
-            const IconComponent = story.icon;
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {impactAreas.map((area, index) => {
+            const IconComponent = area.icon;
             return (
               <motion.div
-                key={story.id}
+                key={area.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer"
+                transition={{ delay: index * 0.15 }}
               >
-                <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 overflow-hidden">
-                  <div className="relative h-48">
-                    <img 
-                      src={story.image} 
-                      alt={story.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${story.color} opacity-80`}></div>
-                    <div className="absolute top-4 left-4">
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">{story.title}</h3>
-                      <div className="flex items-center gap-2 text-white/90 text-sm">
-                        <Clock className="w-4 h-4" />
-                        <span>{story.commitment}</span>
-                      </div>
-                    </div>
-                  </div>
+                <Card className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 h-full">
                   <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-3">
-                      <div className="text-2xl font-bold text-white">{story.impact}</div>
-                      <div className="text-right text-sm text-gray-300">
-                        <div>{story.volunteers} volunteers</div>
-                        <div>active now</div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 bg-hdi-gold/20 rounded-lg">
+                        <IconComponent className="w-6 h-6 text-hdi-gold" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{area.title}</h3>
+                        <div className="flex items-center gap-2 text-white/70 text-sm">
+                          <Clock className="w-4 h-4" />
+                          <span>{area.commitment}</span>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-gray-300 text-sm mb-4">{story.story}</p>
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold">
-                      Join {story.title}
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
+                    
+                    <div className="mb-4">
+                      <div className="text-lg font-semibold text-hdi-gold mb-2">{area.impact}</div>
+                      <p className="text-white/80 text-sm leading-relaxed">{area.description}</p>
+                    </div>
+
+                    <div className="border-t border-white/20 pt-4 mb-4">
+                      <div className="text-xs text-white/60 mb-1">Success Metric</div>
+                      <div className="text-sm text-white/90">{area.metrics}</div>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-white/70">
+                        <span className="font-semibold text-hdi-gold">{area.volunteers}</span> active volunteers
+                      </div>
+                      <Button 
+                        size="sm" 
+                        className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold"
+                      >
+                        Join Team
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -121,20 +119,37 @@ function ImpactShowcase() {
           })}
         </div>
 
-        {/* Call to Action */}
         <motion.div 
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.6 }}
         >
-          <div className="bg-gradient-to-r from-blue-600/20 to-emerald-600/20 rounded-2xl p-8 backdrop-blur-md border border-white/20">
-            <h3 className="text-2xl font-bold mb-4">Ready to Make Your Impact?</h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Choose your path, commit your time, and join thousands of changemakers building a better world together.
+          <div className="bg-hdi-gold/10 border border-hdi-gold/30 rounded-xl p-8">
+            <h3 className="text-2xl font-bold mb-4 text-hdi-gold">Evidence-Based Impact</h3>
+            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+              Every volunteer contribution is tracked, measured, and validated using HDI 2.0 metrics. 
+              Your time directly translates to measurable improvements in community well-being.
             </p>
-            <Button className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-semibold px-8 py-3 text-lg">
-              Start Your Volunteer Journey
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <div className="flex items-center gap-2 text-white/80">
+                <Award className="w-5 h-5 text-hdi-gold" />
+                <span className="text-sm">Verified impact tracking</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/80">
+                <TrendingUp className="w-5 h-5 text-hdi-gold" />
+                <span className="text-sm">Quarterly progress reports</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/80">
+                <Shield className="w-5 h-5 text-hdi-gold" />
+                <span className="text-sm">Research-grade methodology</span>
+              </div>
+            </div>
+            <Button 
+              size="lg" 
+              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-3"
+            >
+              Begin Your Systems Impact Journey
             </Button>
           </div>
         </motion.div>
@@ -144,176 +159,209 @@ function ImpactShowcase() {
 }
 
 export default function JoinMovement() {
-  const tiers = [
+  const commitmentTiers = [
     {
-      name: "🌱 Seed Tier",
-      price: "$1/month (₹90)",
-      perks: [
-        "Free access to premium meditation & wellness apps (worth $120/year)",
-        "Personal HDI score tracking with monthly improvement insights",
-        "Exclusive discounts on health checkups & eco-friendly products",
-        "Digital certificate for volunteer hours (boost your resume)",
-        "Access to global networking community of 10,000+ changemakers",
+      name: "Community Volunteer",
+      commitment: "2-4 hours/week",
+      contribution: "Time + Skills",
+      benefits: [
+        "HDI 2.0 assessment and personalized development plan",
+        "Skills certification in your chosen impact area",
+        "Access to research methods and data analysis training",
+        "Quarterly progress reports showing your community impact",
+        "Professional development through systems thinking workshops"
       ],
-      impact:
-        "Your $1 supports the distribution of education and health resources to underprivileged communities.",
+      impact: "Direct community engagement with measurable HDI improvements"
     },
     {
-      name: "🌿 Growth Tier",
-      price: "$10/month (₹800)",
-      perks: [
-        "Everything in Seed Tier",
-        "Free skill-building courses: AI, sustainability, leadership (worth $500)",
-        "Monthly 1:1 career coaching session with industry experts",
-        "Priority job referrals & internship opportunities at partner organizations",
-        "Micro-grants up to $1,000 for your own social impact projects",
-        "Personalized health & wellness plan with quarterly reviews",
+      name: "Systems Catalyst",
+      commitment: "4-8 hours/week + $25/month",
+      contribution: "Leadership + Resources",
+      benefits: [
+        "Everything in Community Volunteer",
+        "Access to advanced impact measurement tools",
+        "Mentorship opportunities with development professionals",
+        "Priority placement in high-impact projects",
+        "Co-authorship opportunities on research publications",
+        "Speaking opportunities at conferences and events"
       ],
-      impact:
-        "Your $10 plants trees, funds student learning kits & supports well-being projects.",
+      impact: "Lead initiatives that scale solutions across multiple communities"
     },
     {
-      name: "🔥 Impact Tier",
-      price: "$50/month (₹4,000)",
-      perks: [
-        "Everything in Growth Tier",
-        "LinkedIn profile optimization & professional headshots (worth $300)",
-        "Invitation to exclusive networking events & conferences",
-        "Personal brand building support & social media strategy",
-        "Access to executive mentors from Fortune 500 companies",
-        "Travel stipends for volunteering trips & leadership retreats",
-        "Priority healthcare concierge services",
+      name: "Movement Builder",
+      commitment: "8+ hours/week + $100/month",
+      contribution: "Strategy + Implementation",
+      benefits: [
+        "Everything in Systems Catalyst",
+        "Direct collaboration with academic and policy institutions",
+        "Grant writing and fundraising training",
+        "Access to impact investing networks",
+        "Advisory board positions in partner organizations",
+        "Recognition in HDI 2.0 annual impact report"
       ],
-      impact:
-        "Your $50 provides healthcare checkups, digital libraries & livelihood support.",
-    },
-    {
-      name: "🌟 Leader Tier",
-      price: "$200/month (₹16,500)",
-      perks: [
-        "Everything in Impact Tier",
-        "Quarterly wealth management & investment consulting sessions",
-        "Speaking fee opportunities at global conferences ($5,000+ per event)",
-        "Co-author research papers with academic institutions",
-        "Board positions on HDI90 advisory committees",
-        "Exclusive access to impact investing opportunities",
-        "Personal assistant support for volunteering activities",
-      ],
-      impact:
-        "Your $200 helps fund a rural library, a village skill-training program, or a community health initiative.",
-    },
-    {
-      name: "🌍 Visionary Tier",
-      price: "$500/month (₹41,000)",
-      perks: [
-        "Everything in Leader Tier",
-        "Direct access to UN Sustainable Development Goals working groups",
-        "Lifetime access to all HDI90 digital courses & future content (worth $10,000+)",
-        "Personal documentary feature about your impact journey",
-        "Legacy fund management: multiply your impact through strategic investments",
-        "Monthly featured spotlight in HDI90's global newsletter (500K+ subscribers)",
-        "Dedicated team to amplify your personal brand & thought leadership",
-      ],
-      impact:
-        "Your $500 supports an entire school, a health camp, or a green energy project.",
-    },
+      impact: "Drive policy change and institutional adoption of HDI 2.0 framework"
+    }
   ];
 
   return (
-    <div className="bg-gradient-to-b from-white to-gray-100 text-gray-900">
+    <div className="min-h-screen bg-background">
       <Navbar />
+      
       {/* Hero Section */}
-      <section className="text-center py-16 px-6">
-        <motion.h1
-          className="text-5xl font-extrabold mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          🌍 Join the <span className="text-green-600">HDI90 Movement</span>
-        </motion.h1>
-        <p className="text-xl max-w-2xl mx-auto mb-8">
-          Together Towards <strong>0.90 by 2030</strong>  
-          <br /> What if just <span className="font-semibold">$1 a month</span> could transform humanity's future?
-        </p>
-        <p className="text-lg font-medium text-gray-700 max-w-2xl mx-auto mb-10">
-          By joining, you don't just donate — you commit to <strong>2 hours a week</strong> of purposeful contribution.  
-          Because a movement isn't funded, it's lived. And you are invited to live it.
-        </p>
-        <Button className="px-6 py-3 text-lg rounded-2xl shadow-lg">
-          🚀 Start Your Journey
-        </Button>
-      </section>
-
-      {/* Why Section */}
-      <section className="bg-white py-16 px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">🌱 Why HDI90 Exists</h2>
-          <p className="text-lg mb-4">
-            GDP is not enough. Nations can be rich while people remain unhealthy, uneducated, and unhappy.
-          </p>
-          <p className="text-lg mb-4">
-            HDI90 is a new framework — measuring <strong>Health, Education, Happiness & Environmental Impact</strong>.  
-            Progress is real only when it reaches the <em>last person first</em>.
-          </p>
-          <p className="text-lg font-medium">
-            With your subscription and <strong>2 hours a week of volunteering</strong>, we can make it real.
-          </p>
-        </div>
-      </section>
-
-      {/* Tiers Section */}
-      <section className="py-20 px-6 bg-gray-50">
-        <h2 className="text-4xl font-extrabold text-center mb-12">
-          💎 Choose Your Path of Impact
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {tiers.map((tier, i) => (
-            <motion.div
-              key={tier.name}
-              className="flex flex-col"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2 }}
+      <section className="bg-gradient-hero py-20 px-6 text-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            Join the HDI 2.0 Movement
+          </motion.h1>
+          <motion.p 
+            className="text-xl mb-8 text-white/90"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            Drive systemic change toward <strong>HDI 2.0 of 0.90 by 2030</strong> through 
+            evidence-based action and collective impact.
+          </motion.p>
+          <motion.p 
+            className="text-lg mb-10 text-white/80 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            This isn't about donations or charity. It's about committed individuals working within proven systems 
+            to achieve measurable improvements in health, education, well-being, and environmental sustainability.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Button 
+              size="lg" 
+              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4"
             >
-              <Card className="shadow-xl border-2 border-green-200 rounded-2xl overflow-hidden">
-                <CardContent className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                  <p className="text-lg font-semibold mb-4">{tier.price}</p>
-                  <ul className="text-left mb-6 space-y-2">
-                    {tier.perks.map((perk, idx) => (
-                      <li key={idx}>✅ {perk}</li>
-                    ))}
-                  </ul>
-                  <p className="text-sm text-green-700 font-medium mb-4">
-                    💡 Impact: {tier.impact}
-                  </p>
-                  <Button className="mt-auto">Join {tier.name}</Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+              Assess Your Commitment Level
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
-      {/* Closing Call */}
-      <section className="bg-green-700 text-white py-16 px-6 text-center">
-        <h2 className="text-4xl font-extrabold mb-6">🔑 Why Join Today?</h2>
-        <p className="max-w-3xl mx-auto text-lg mb-6">
-          Because every day counts. Every rupee matters. And when you join HDI90, you're not just a donor —  
-          you're a <strong>co-creator of humanity's future</strong>.  
-        </p>
-        <p className="max-w-3xl mx-auto text-lg mb-8">
-          👉 For the price of a coffee, you can change a life.  
-          👉 For the price of a dinner, you can transform a community.  
-          👉 For the price of a holiday, you can build a legacy.  
-        </p>
-        <Button className="px-8 py-4 text-xl font-semibold bg-white text-green-700 hover:bg-gray-100">
-          🌍 Step Into History
-        </Button>
+      {/* Evidence Base Section */}
+      <section className="py-16 px-6 bg-card">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h2 className="text-3xl font-bold mb-6">Why HDI 2.0 Matters</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Traditional development metrics fail to capture human flourishing. HDI 2.0 provides a 
+              comprehensive, actionable framework based on rigorous research and validated methodologies.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="text-center p-6">
+              <Heart className="w-10 h-10 text-hdi-blue mx-auto mb-4" />
+              <h3 className="font-semibold mb-2">Holistic Health</h3>
+              <p className="text-sm text-muted-foreground">Beyond life expectancy: biomarkers, mental health, lifestyle factors</p>
+            </Card>
+            <Card className="text-center p-6">
+              <GraduationCap className="w-10 h-10 text-hdi-green mx-auto mb-4" />
+              <h3 className="font-semibold mb-2">Practical Education</h3>
+              <p className="text-sm text-muted-foreground">Skills and competencies that drive real economic mobility</p>
+            </Card>
+            <Card className="text-center p-6">
+              <Users className="w-10 h-10 text-hdi-gold mx-auto mb-4" />
+              <h3 className="font-semibold mb-2">Measured Well-being</h3>
+              <p className="text-sm text-muted-foreground">Subjective and objective indicators of quality of life</p>
+            </Card>
+            <Card className="text-center p-6">
+              <Leaf className="w-10 h-10 text-hdi-navy mx-auto mb-4" />
+              <h3 className="font-semibold mb-2">Environmental Impact</h3>
+              <p className="text-sm text-muted-foreground">Footprint reduction and positive environmental contributions</p>
+            </Card>
+          </div>
+        </div>
       </section>
 
-      {/* Impact Showcase */}
-      <ImpactShowcase />
+      {/* Commitment Tiers */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Choose Your Level of Impact</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {commitmentTiers.map((tier, i) => (
+              <motion.div
+                key={tier.name}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2 }}
+              >
+                <Card className="h-full shadow-medium border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                  <CardContent className="p-6 flex flex-col h-full">
+                    <div className="mb-6">
+                      <h3 className="text-xl font-bold mb-2">{tier.name}</h3>
+                      <div className="text-sm text-muted-foreground mb-1">Time Commitment</div>
+                      <div className="text-lg font-semibold text-primary mb-2">{tier.commitment}</div>
+                      <div className="text-sm text-muted-foreground mb-1">Your Contribution</div>
+                      <div className="font-medium">{tier.contribution}</div>
+                    </div>
+                    
+                    <div className="flex-grow mb-6">
+                      <h4 className="font-semibold mb-3">What You Receive</h4>
+                      <ul className="space-y-2">
+                        {tier.benefits.map((benefit, idx) => (
+                          <li key={idx} className="text-sm flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="border-t pt-4 mb-6">
+                      <div className="text-sm font-medium text-primary mb-1">Your Impact</div>
+                      <div className="text-sm text-muted-foreground">{tier.impact}</div>
+                    </div>
+
+                    <Button className="w-full bg-primary hover:bg-primary/90">
+                      Join as {tier.name}
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Systems Approach */}
+      <SystemsApproach />
+
+      {/* Call to Action */}
+      <section className="py-16 px-6 bg-primary/5">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold mb-6">Ready to Drive Systems Change?</h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Join a global community of evidence-based changemakers committed to achieving 
+            measurable progress in human development by 2030.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Calculate Your HDI 2.0
+            </Button>
+            <Button size="lg" variant="outline">
+              Read the Methodology
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

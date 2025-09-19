@@ -59,55 +59,89 @@ export default function Methodology() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="bg-gradient-to-r from-primary/5 to-primary/10">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-20">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+      <section className="bg-gradient-to-r from-primary/10 to-hdi-blue/10 border-y border-primary/20">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">A single, science-backed number that measures real human progress</h1>
-              <p className="mt-4 text-lg text-muted-foreground">HDI 2.0 blends health, education, happiness, and environmental impact into a transparent, actionable index. Designed for individuals, communities, and policymakers who want meaningful, measurable improvement.</p>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                The Science Behind <span className="text-hdi-blue">Human Flourishing</span>
+              </h1>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                HDI 2.0 represents a paradigm shift from economic-centric development metrics to a comprehensive, 
+                evidence-based framework that captures the full spectrum of human well-being and planetary health.
+              </p>
+              <p className="text-muted-foreground mb-8">
+                Built on decades of research in development economics, public health, positive psychology, 
+                and environmental science, our methodology provides actionable insights for individuals, 
+                communities, and policymakers committed to measurable progress.
+              </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Button variant="outline" size="lg">
-                  Request a demo
+              <div className="flex flex-wrap gap-4 mb-8">
+                <Button 
+                  size="lg" 
+                  onClick={() => navigate('/hdi-calculator')}
+                  className="bg-hdi-blue hover:bg-hdi-blue/90"
+                >
+                  Try HDI 2.0 Assessment
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => window.open('/hdi-methodology.pdf', '_blank')}
+                >
+                  Download Technical Paper
                 </Button>
               </div>
 
-              <div className="mt-6 text-sm text-muted-foreground">Trusted methods • Reproducible pipeline • Privacy-first</div>
+              <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-hdi-green rounded-full" />
+                  <span>Peer-reviewed methodology</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-hdi-gold rounded-full" />
+                  <span>Open-source calculations</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-hdi-blue rounded-full" />
+                  <span>Privacy-first design</span>
+                </div>
+              </div>
             </div>
 
-            <Card className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm text-muted-foreground">Current HDI 2.0 (sample)</div>
-                  <div className="text-3xl font-bold mt-1">0.72 <span className="text-sm text-muted-foreground">(±0.03)</span></div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-muted-foreground">Updated</div>
-                  <div className="text-sm">Sep 17, 2025</div>
+            <Card className="p-8 shadow-elegant">
+              <div className="text-center mb-6">
+                <div className="text-sm text-muted-foreground mb-2">Sample HDI 2.0 Assessment</div>
+                <div className="text-4xl font-bold text-hdi-blue mb-2">0.742</div>
+                <div className="text-sm text-muted-foreground">
+                  Above global median • Updated {new Date().toLocaleDateString()}
                 </div>
               </div>
 
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="text-xs text-muted-foreground">Health</div>
-                  <div className="text-xl font-semibold">0.76</div>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border border-red-200">
+                  <div className="text-xs text-red-600 font-medium mb-1">Health (AarogyaShree)</div>
+                  <div className="text-2xl font-bold text-red-700">0.76</div>
                 </div>
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="text-xs text-muted-foreground">Education</div>
-                  <div className="text-xl font-semibold">0.70</div>
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-blue-200">
+                  <div className="text-xs text-blue-600 font-medium mb-1">Education</div>
+                  <div className="text-2xl font-bold text-blue-700">0.71</div>
                 </div>
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="text-xs text-muted-foreground">Happiness</div>
-                  <div className="text-xl font-semibold">0.68</div>
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg border border-purple-200">
+                  <div className="text-xs text-purple-600 font-medium mb-1">Happiness</div>
+                  <div className="text-2xl font-bold text-purple-700">0.68</div>
                 </div>
-                <div className="p-4 bg-muted rounded-lg">
-                  <div className="text-xs text-muted-foreground">Environment</div>
-                  <div className="text-xl font-semibold">0.78</div>
+                <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg border border-green-200">
+                  <div className="text-xs text-green-600 font-medium mb-1">Environment</div>
+                  <div className="text-2xl font-bold text-green-700">0.82</div>
                 </div>
               </div>
 
-              <div className="mt-4 text-xs text-muted-foreground">Tip: HDI 2.0 uses a geometric mean so low scores in any dimension matter more — this encourages balanced progress.</div>
+              <div className="text-xs text-muted-foreground leading-relaxed">
+                <strong>Geometric Mean:</strong> HDI 2.0 uses multiplicative aggregation to ensure 
+                balanced progress across all dimensions. Low performance in any area significantly 
+                impacts the overall score, encouraging holistic development.
+              </div>
             </Card>
           </div>
         </div>

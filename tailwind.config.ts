@@ -47,13 +47,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // HDI Theme Colors
+        // HDI Theme Colors - Extended palette
         "hdi-blue": "hsl(var(--hdi-blue))",
         "hdi-green": "hsl(var(--hdi-green))",
         "hdi-gold": "hsl(var(--hdi-gold))",
         "hdi-navy": "hsl(var(--hdi-navy))",
         "hdi-light-blue": "hsl(var(--hdi-light-blue))",
         "hdi-light-green": "hsl(var(--hdi-light-green))",
+        "hdi-teal": "hsl(var(--hdi-teal))",
+        "hdi-orange": "hsl(var(--hdi-orange))",
+        "hdi-purple": "hsl(var(--hdi-purple))",
+        "hdi-gray": "hsl(var(--hdi-gray))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -69,11 +73,14 @@ export default {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
         "gradient-accent": "var(--gradient-accent)",
+        "gradient-impact": "var(--gradient-impact)",
+        "gradient-trust": "var(--gradient-trust)",
       },
       boxShadow: {
         "soft": "var(--shadow-soft)",
         "medium": "var(--shadow-medium)",
         "strong": "var(--shadow-strong)",
+        "elegant": "var(--shadow-elegant)",
       },
       borderRadius: {
         lg: "var(--radius)",
