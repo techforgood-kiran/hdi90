@@ -209,7 +209,10 @@ export default function Methodology() {
               <Button onClick={() => navigate('/hdi-calculator')}>
                 Start Individual Assessment
               </Button>
-              <Button variant="outline">
+              <Button 
+                variant="outline"
+                onClick={() => window.location.href = 'mailto:sai@hdi90.com?subject=Enterprise/Community Pilot Inquiry&body=Hello, I am interested in learning more about HDI 2.0 for my organization/community.'}
+              >
                 Enterprise / Community Pilot
               </Button>
             </div>
