@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hdi-hero.jpg";
 
 const Hero = () => {
@@ -37,8 +38,10 @@ const Hero = () => {
             Join the Movement
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg">
-            Understanding HDI
+          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-hdi-navy px-8 py-4 text-lg font-semibold">
+            <Link to="/methodology">
+              UNDERSTANDING HDI 2.0
+            </Link>
           </Button>
         </div>
         
