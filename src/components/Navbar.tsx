@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu, X, ChevronDown } from 'lucide-react';
-import hdi90Logo from '@/assets/hdi90-logo-transparent.png';
+import hdi90Logo from '@/assets/hdi90-final-logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,14 +36,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div 
-            className="flex items-center space-x-3 cursor-pointer" 
+            className="flex items-center cursor-pointer" 
             onClick={() => navigate('/')}
           >
-            <img src={hdi90Logo} alt="HDI90 Logo" className="h-16 w-16" />
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-900">HDI90</span>
-              <span className="text-xs text-gray-600 -mt-1">MOVEMENT</span>
-            </div>
+            <img src={hdi90Logo} alt="HDI90 Logo" className="h-48 w-48" />
           </div>
 
           {/* Desktop Navigation */}
