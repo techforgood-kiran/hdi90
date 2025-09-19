@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import hdi90Logo from '@/assets/hdi90-logo.png';
+import hdi90Logo from '@/assets/hdi90-logo-transparent.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
             className="flex items-center space-x-3 cursor-pointer" 
             onClick={() => navigate('/')}
           >
-            <img src={hdi90Logo} alt="HDI90 Logo" className="h-10 w-10" />
+            <img src={hdi90Logo} alt="HDI90 Logo" className="h-16 w-16" />
             <div className="flex flex-col">
               <span className="text-lg font-bold text-gray-900">HDI90</span>
               <span className="text-xs text-gray-600 -mt-1">MOVEMENT</span>
