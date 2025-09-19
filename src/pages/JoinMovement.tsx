@@ -170,9 +170,10 @@ export default function JoinMovement() {
         "Skills certification in your chosen impact area",
         "Access to research methods and data analysis training",
         "Quarterly progress reports showing your community impact",
-        "Professional development through systems thinking workshops"
-      ],
-      impact: "Direct community engagement with measurable HDI improvements"
+        "Professional development through systems thinking workshops",
+        "Free access to premium HDI 2.0 tools and resources",
+        "Networking opportunities with global development professionals"
+      ]
     },
     {
       name: "Systems Catalyst",
@@ -184,9 +185,10 @@ export default function JoinMovement() {
         "Mentorship opportunities with development professionals",
         "Priority placement in high-impact projects",
         "Co-authorship opportunities on research publications",
-        "Speaking opportunities at conferences and events"
-      ],
-      impact: "Lead initiatives that scale solutions across multiple communities"
+        "Speaking opportunities at conferences and events",
+        "Monthly one-on-one coaching sessions with HDI experts",
+        "Early access to new HDI 2.0 research and methodologies"
+      ]
     },
     {
       name: "Movement Builder",
@@ -198,9 +200,10 @@ export default function JoinMovement() {
         "Grant writing and fundraising training",
         "Access to impact investing networks",
         "Advisory board positions in partner organizations",
-        "Recognition in HDI 2.0 annual impact report"
-      ],
-      impact: "Drive policy change and institutional adoption of HDI 2.0 framework"
+        "Recognition in HDI 2.0 annual impact report",
+        "Exclusive access to HDI 2.0 leadership summit and retreats",
+        "Personal branding support and thought leadership opportunities"
+      ]
     }
   ];
 
@@ -311,11 +314,6 @@ export default function JoinMovement() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-
-                    <div className="border-t pt-4 mb-6">
-                      <div className="text-sm font-medium text-primary mb-1">Your Impact</div>
-                      <div className="text-sm text-muted-foreground">{tier.impact}</div>
                     </div>
 
                     <Button className="w-full bg-primary hover:bg-primary/90">
