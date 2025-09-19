@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, BarChart3, Users, Globe, Target, CheckCircle } from "lucide-react";
@@ -126,9 +127,11 @@ const Index = () => {
                 </div>
               </div>
               <div className="text-center">
-                <Button size="lg" className="bg-hdi-blue hover:bg-hdi-blue/90 text-white">
-                  Calculate Your HDI 2.0
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                <Button size="lg" className="bg-hdi-blue hover:bg-hdi-blue/90 text-white" asChild>
+                  <Link to="/hdi-calculator">
+                    Calculate Your HDI 2.0
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
                 </Button>
                 <p className="text-sm text-muted-foreground mt-3">
                   Free assessment • Evidence-based recommendations • Privacy protected

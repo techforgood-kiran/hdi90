@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Leaf, GraduationCap, Clock, ArrowRight, Award, TrendingUp, Shield } from "lucide-react";
@@ -353,8 +354,10 @@ export default function JoinMovement() {
             measurable progress in human development by 2030.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Calculate Your HDI 2.0
+            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+              <Link to="/hdi-calculator">
+                Calculate Your HDI 2.0
+              </Link>
             </Button>
             <Button size="lg" variant="outline">
               Read the Methodology
