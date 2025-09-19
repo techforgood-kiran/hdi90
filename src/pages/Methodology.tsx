@@ -189,18 +189,22 @@ export default function Methodology() {
             <summary className="cursor-pointer font-medium">Open detailed methodology & equations</summary>
 
             <div className="mt-4">
-              <iframe 
-                src="/hdi-methodology.pdf" 
-                className="w-full h-[800px] border rounded-lg"
-                title="HDI 2.0 Methodology Document"
-              />
-              <div className="mt-6 flex gap-3">
-                <Button className="mr-3" onClick={() => window.open('/hdi-methodology.pdf', '_blank')}>
-                  View Full PDF
-                </Button>
-                <Button variant="outline">
-                  Request a research demo
-                </Button>
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-8 text-center">
+                <div className="flex items-center justify-center mb-4">
+                  <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">HDI 2.0 Methodology Document</h3>
+                <p className="text-gray-600 mb-6">Complete technical specification with formulas, data pipelines, and implementation guidelines for research-grade HDI 2.0 calculations.</p>
+                <div className="flex gap-3 justify-center">
+                  <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => window.open('/hdi-methodology.pdf', '_blank')}>
+                    📄 Open Full PDF Document
+                  </Button>
+                  <Button variant="outline">
+                    Request Research Demo
+                  </Button>
+                </div>
               </div>
             </div>
           </details>
