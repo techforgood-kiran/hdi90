@@ -329,29 +329,6 @@ export default function JoinMovement() {
         </div>
       </section>
 
-      {/* Systems Approach */}
-      <SystemsApproach />
-
-      {/* Call to Action */}
-      <section className="py-16 px-6 bg-primary/5">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Drive Systems Change?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join a global community of evidence-based changemakers committed to achieving 
-            measurable progress in human development by 2030.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-              <Link to="/hdi-calculator">
-                Calculate Your HDI 2.0
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline">
-              Read the Methodology
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
