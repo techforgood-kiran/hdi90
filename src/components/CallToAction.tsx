@@ -52,11 +52,14 @@ const CallToAction = () => {
         <div className="text-center">
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
             <Button 
+              asChild
               size="lg" 
               className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg shadow-medium"
             >
-              Make Your Commitment
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <Link to="/join-movement">
+                Make Your Commitment
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
             <Button 
               asChild
