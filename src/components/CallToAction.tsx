@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Target, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
@@ -58,11 +59,13 @@ const CallToAction = () => {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
-              variant="outline" 
+              asChild
               size="lg" 
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg"
+              className="bg-hdi-navy hover:bg-hdi-navy/90 text-white px-8 py-4 text-lg font-semibold"
             >
-              Read Our Principles
+              <Link to="/principles">
+                Read Our Principles
+              </Link>
             </Button>
           </div>
           

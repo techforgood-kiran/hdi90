@@ -13,6 +13,7 @@ import LearningToLead from "./pages/missions/LearningToLead";
 import FlourishingSocieties from "./pages/missions/FlourishingSocieties";
 import RegenerateProsper from "./pages/missions/RegenerateProsper";
 import CrossMissionEnablers from "./pages/missions/CrossMissionEnablers";
+import Principles from "./pages/Principles";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/missions/flourishing-societies" element={<FlourishingSocieties />} />
           <Route path="/missions/regenerate-prosper" element={<RegenerateProsper />} />
           <Route path="/missions/enablers" element={<CrossMissionEnablers />} />
+          <Route path="/principles" element={<Principles />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
