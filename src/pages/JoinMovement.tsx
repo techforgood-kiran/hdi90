@@ -236,19 +236,6 @@ export default function JoinMovement() {
             This isn't about donations or charity. It's about committed individuals working within proven systems 
             to achieve measurable improvements in health, education, well-being, and environmental sustainability.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <Button 
-              size="lg" 
-              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4"
-            >
-              Assess Your Commitment Level
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </motion.div>
         </div>
       </section>
 
