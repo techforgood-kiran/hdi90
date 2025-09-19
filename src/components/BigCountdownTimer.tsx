@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { useCountdown } from '@/hooks/useCountdown';
 import { Clock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 export const BigCountdownTimer = () => {
   // New Year's Eve 2030 transitioning to 2031 - January 1st, 2031 at 12:00:00 AM
@@ -147,9 +149,15 @@ export const BigCountdownTimer = () => {
             <p className="text-lg md:text-xl text-red-200 mb-4">
               Every second counts. Every action matters.
             </p>
-            <p className="text-xl md:text-2xl font-bold text-red-100 animate-pulse">
-              JOIN THE MISSION NOW!
-            </p>
+            <Button 
+              asChild
+              size="lg"
+              className="bg-transparent border-2 border-primary text-white hover:bg-primary/20 text-xl md:text-2xl font-bold px-8 py-4 animate-pulse"
+            >
+              <Link to="/join-movement">
+                JOIN THE MISSION NOW!
+              </Link>
+            </Button>
           </motion.div>
         </motion.div>
       </div>
