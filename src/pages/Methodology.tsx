@@ -188,40 +188,15 @@ export default function Methodology() {
           <details className="bg-card rounded-lg p-6 shadow-lg open:shadow-xl">
             <summary className="cursor-pointer font-medium">Open detailed methodology & equations</summary>
 
-            <div className="mt-4 prose max-w-none text-foreground">
-              <h3>Overview & final aggregation</h3>
-              <p>The HDI 2.0 score combines four domain scores (each in [0,1]) using a geometric mean to ensure balance between domains:</p>
-              <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>HDI_2.0 = (S_H * S_E * S_Hp * S_Env)^(1/4)</code></pre>
-
-              <h3>AarogyaShree (Health) — practical calculation</h3>
-              <p>Compute five normalized indicator composites: I_bio, I_psy, I_eol, I_gen, I_life. Then:</p>
-              <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>S_H = 0.2*I_bio + 0.2*I_psy + 0.2*I_eol + 0.2*I_gen + 0.2*I_life</code></pre>
-
-              <p><strong>Normalization options</strong>: Min–max mapping or logistic mapping for skewed measures. Example (min–max):</p>
-              <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>x' = (x - x_min) / (x_max - x_min)</code></pre>
-
-              <h3>Education — practical calculation</h3>
-              <p>Five domain composites (literacy, aptitude×attitude, design thinking, ikigai competence, entrepreneurship) normalized and averaged:</p>
-              <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>S_E = ∑(j=1 to 5) 0.2 * J_j</code></pre>
-
-              <h3>Happiness — practical calculation</h3>
-              <p>Nine domains with specified weights (psychological 15%, living standards 15%, others 10%). Use psychometric validation (factor analysis / IRT) then:</p>
-              <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>S_Hp = ∑(d=1 to 9) ω_d * D_d</code></pre>
-
-              <h3>Environment — practical calculation</h3>
-              <p>Four indicators: planetary boundary adherence (PBA), personal net emissions, group emissions, and positive impact. Example aggregation:</p>
-              <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>S_Env = 0.3*PBA + 0.2*E_p + 0.2*E_group + 0.3*I_pos</code></pre>
-
-              <h3>Robustness, uncertainty & validation</h3>
-              <ul>
-                <li>Bootstrap 95% CI of each domain score and of the composite.</li>
-                <li>Use Monte Carlo propagation for measurement error (especially for lab & emissions data).</li>
-                <li>Sensitivity analysis: compute elasticities of HDI with respect to each domain.</li>
-              </ul>
-
-              <div className="mt-6">
-                <Button className="mr-3">
-                  Download full methodology (PDF)
+            <div className="mt-4">
+              <iframe 
+                src="/hdi-methodology.pdf" 
+                className="w-full h-[800px] border rounded-lg"
+                title="HDI 2.0 Methodology Document"
+              />
+              <div className="mt-6 flex gap-3">
+                <Button className="mr-3" onClick={() => window.open('/hdi-methodology.pdf', '_blank')}>
+                  View Full PDF
                 </Button>
                 <Button variant="outline">
                   Request a research demo
