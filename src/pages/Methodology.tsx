@@ -326,7 +326,7 @@ export default function Methodology() {
         <div className="md:flex md:justify-between">
           <div>
             <div className="font-semibold">Holistic Development Index — HDI 2.0</div>
-            <p className="mt-2 text-sm text-muted-foreground">Questions, pilots or enterprise partnerships? <a href="mailto:hello@hdi2.org" className="text-primary">hello@hdi2.org</a></p>
+            <p className="mt-2 text-sm text-muted-foreground">Questions, pilots or enterprise partnerships? <a href="mailto:sai@hdi90.com" className="text-primary">sai@hdi90.com</a></p>
           </div>
 
           <div className="mt-6 md:mt-0 text-sm text-muted-foreground">
