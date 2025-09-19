@@ -55,7 +55,7 @@ const WhyHDI = () => {
                   </p>
                   <div className="mt-4 p-3 bg-hdi-light-blue rounded">
                     <p className="text-sm font-medium text-hdi-navy">
-                      GDP can increase if the rich gets richer! But for HDI to increase, 
+                      GDP can increase if the rich gets richer! But for HDI 1.0 to increase, 
                       Education, Health, and Income Equity must improve for ALL.
                     </p>
                   </div>
