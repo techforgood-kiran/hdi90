@@ -357,15 +357,10 @@ export default function HealthyHumanCapital() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full mb-6">
-              <Star className="w-5 h-5" />
-              <span className="font-semibold">Movement Builder Tier Exclusive</span>
-              <Sparkles className="w-5 h-5" />
-            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">SHUNSY-A-PATCH</h2>
             <p className="text-xl text-gray-600 mb-2">Holistic Disease Cure Through Lifestyle Coaching</p>
             <p className="text-lg text-gray-500 max-w-4xl mx-auto">
-              We coach and guide all "Movement Builder" tier users to cure diseases through 
+              We coach and guide individuals to cure diseases through 
               comprehensive lifestyle changes integrating ancient wisdom with modern science
             </p>
           </motion.div>
@@ -498,7 +493,7 @@ export default function HealthyHumanCapital() {
                 <Heart className="w-8 h-8 text-red-500" />
               </div>
               <p className="text-lg text-gray-700 mb-6">
-                Our Movement Builder members receive personalized coaching that combines these ancient and modern healing modalities 
+                We provide personalized coaching that combines these ancient and modern healing modalities 
                 into a comprehensive lifestyle transformation program. Each approach is carefully integrated to address the root 
                 causes of disease while supporting the body's natural healing intelligence.
               </p>
@@ -506,7 +501,7 @@ export default function HealthyHumanCapital() {
                 size="lg"
                 className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg"
               >
-                Become a Movement Builder
+                Start Your Healing Journey
               </Button>
             </div>
           </motion.div>
