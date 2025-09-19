@@ -10,6 +10,7 @@ import Hero from "@/components/Hero";
 import WhyHDI from "@/components/WhyHDI";
 import HDI2 from "@/components/HDI2";
 import CallToAction from "@/components/CallToAction";
+import { BigCountdownTimer } from "@/components/BigCountdownTimer";
 
 const Index = () => {
   const { scrollYProgress } = useScrollController();
@@ -141,6 +142,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Big Countdown Timer */}
+      <BigCountdownTimer />
 
       <Hero />
       <WhyHDI />
