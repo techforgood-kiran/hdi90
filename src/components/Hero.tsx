@@ -38,7 +38,7 @@ const Hero = () => {
             Join the Movement
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-hdi-navy px-8 py-4 text-lg font-semibold">
+          <Button asChild size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-lg">
             <Link to="/methodology">
               UNDERSTANDING HDI 2.0
             </Link>
