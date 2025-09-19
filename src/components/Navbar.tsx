@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, ChevronDown } from 'lucide-react';
 import hdi90Logo from '@/assets/hdi90-logo-transparent.png';
 
 const Navbar = () => {
@@ -12,7 +18,14 @@ const Navbar = () => {
     { to: '/', label: 'Home' },
     { to: '/hdi-calculator', label: 'Calculator' },
     { to: '/methodology', label: 'Methodology' },
-    { to: '/join-movement', label: 'Join Movement' },
+  ];
+
+  const missionItems = [
+    { to: '/missions/healthy-human-capital', label: 'Healthy Human Capital' },
+    { to: '/missions/learning-to-lead', label: 'Learning to Lead' },
+    { to: '/missions/flourishing-societies', label: 'Flourishing Societies' },
+    { to: '/missions/regenerate-prosper', label: 'Regenerate & Prosper' },
+    { to: '/missions/enablers', label: 'Cross-Mission Enablers' },
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -48,6 +61,29 @@ const Navbar = () => {
                 {item.label}
               </NavLink>
             ))}
+            
+            {/* Missions Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-sm font-medium text-gray-700 hover:text-blue-600 p-0 h-auto">
+                  Missions
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 bg-white">
+                {missionItems.map((item) => (
+                  <DropdownMenuItem key={item.to} asChild>
+                    <NavLink
+                      to={item.to}
+                      className="flex items-center px-2 py-1.5 text-sm hover:bg-gray-50 cursor-pointer"
+                    >
+                      {item.label}
+                    </NavLink>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button 
               size="sm" 
               className="bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700"
@@ -85,6 +121,30 @@ const Navbar = () => {
                   {item.label}
                 </NavLink>
               ))}
+              
+              {/* Mobile Missions */}
+              <div className="border-t pt-2 mt-2">
+                <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  Missions
+                </div>
+                {missionItems.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) =>
+                      `block px-6 py-2 text-sm font-medium rounded-md transition-colors ${
+                        isActive 
+                          ? 'text-blue-600 bg-blue-50' 
+                          : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                      }`
+                    }
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+              
               <div className="px-3 pt-2">
                 <Button 
                   size="sm" 
