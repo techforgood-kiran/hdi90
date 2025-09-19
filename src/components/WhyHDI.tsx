@@ -73,7 +73,7 @@ const WhyHDI = () => {
               Our Commitment: Genuine Well-being Over Economic Metrics
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Through <strong>Systems Thinking</strong>, <strong>Ethical Business Models</strong>, 
+              Through <strong>Systems Thinking</strong>, <strong>Enlightened Business Model Innovation</strong>, 
               and <strong>Circular Economy</strong> principles — we believe authentic development 
               must honor planetary boundaries while ensuring no one is left behind.
             </p>
