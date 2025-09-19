@@ -18,6 +18,7 @@ const Navbar = () => {
     { to: '/', label: 'Home' },
     { to: '/hdi-calculator', label: 'HDI 2.0 Calculator' },
     { to: '/methodology', label: 'Methodology' },
+    { to: '/principles', label: 'Our Principles' },
   ];
 
   const missionItems = [
