@@ -2,8 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Shield, TrendingUp, Target, Clock, Award, CheckCircle } from 'lucide-react';
+import { 
+  Heart, 
+  Users, 
+  Shield, 
+  TrendingUp, 
+  Target, 
+  Clock, 
+  Award, 
+  CheckCircle,
+  Stethoscope,
+  Brain,
+  Baby,
+  Activity,
+  Lightbulb
+} from 'lucide-react';
+import { SDGIcon } from '@/components/SDGIcon';
 import Navbar from '@/components/Navbar';
+import healthHero from '@/assets/health-hero.jpg';
+import communityHealth from '@/assets/community-health.jpg';
 
 export default function HealthyHumanCapital() {
   const interventions = [
@@ -25,14 +42,26 @@ export default function HealthyHumanCapital() {
     {
       title: "Mental Health at Scale",
       description: "School counseling, workplace mental health, suicide prevention",
-      icon: TrendingUp
+      icon: Brain
+    },
+    {
+      title: "Maternal & Child Health",
+      description: "Comprehensive care from pregnancy through early childhood development",
+      icon: Baby
+    },
+    {
+      title: "Digital Health Infrastructure",
+      description: "Electronic health records, AI diagnostics, and remote monitoring systems",
+      icon: Activity
     }
   ];
 
   const kpis = [
     "95% population access to essential health services by 2030",
-    "Maternal mortality and under-5 mortality to best-practice thresholds",
+    "Maternal mortality reduced to <50 per 100,000 live births",
+    "Under-5 mortality to best-practice thresholds (<25 per 1,000)",
     "50% reduction in untreated depression/anxiety prevalence",
+    "Universal health insurance coverage achieved",
     "Healthy life expectancy index → 0.90 contribution"
   ];
 
@@ -40,59 +69,106 @@ export default function HealthyHumanCapital() {
     {
       title: "CHW Rapid Deployment",
       timeline: "90 days",
-      description: "National scale community health worker deployment in underserved districts"
+      description: "National scale community health worker deployment in underserved districts with digital tools"
     },
     {
       title: "Free Primary Care Access",
       timeline: "120 days", 
-      description: "Telemedicine + essential medicines in pilot provinces"
+      description: "Telemedicine + essential medicines in pilot provinces with mobile health units"
     },
     {
       title: "Immunization Catch-up",
       timeline: "180 days",
-      description: "Childhood immunization weeks + nutrition hotspot mapping"
+      description: "Childhood immunization weeks + nutrition hotspot mapping with community mobilization"
+    }
+  ];
+
+  const governance = [
+    {
+      title: "Health Guarantee Law",
+      description: "Constitutional right to healthcare with minimum publicly funded package for all citizens"
+    },
+    {
+      title: "Blended Finance Mechanisms",
+      description: "Progressive taxation + concessional finance + impact bonds for health infrastructure"
+    },
+    {
+      title: "Public-Private Partnerships",
+      description: "Strategic partnerships with strict equity covenants and quality standards"
+    }
+  ];
+
+  const risks = [
+    {
+      title: "Weak Primary Healthcare Governance",
+      description: "Limited institutional capacity at district and community levels",
+      mitigation: "Ring-fenced budgets, citizen scorecards, performance-based financing with transparency measures"
+    },
+    {
+      title: "Human Resource Shortage",
+      description: "Insufficient healthcare workers, especially in rural and remote areas",
+      mitigation: "Accelerated mid-level provider training, tele-supervision, incentive packages for rural service"
+    },
+    {
+      title: "Health System Fragmentation",
+      description: "Lack of coordination between different health programs and levels of care",
+      mitigation: "Integrated service delivery models, unified health information systems, single governance structure"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-red-50 to-pink-50">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-600 via-pink-600 to-rose-500 text-white py-20 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section 
+        className="relative py-32 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(220, 38, 127, 0.8), rgba(190, 24, 93, 0.8)), url(${healthHero})` 
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
+            transition={{ duration: 0.8 }}
+            className="text-center text-white"
           >
-            <Heart className="w-20 h-20 mx-auto mb-6 text-white/90" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Mission Healthy Human Capital
+            <div className="flex justify-center gap-2 mb-6">
+              <SDGIcon number="3" size="md" />
+              <SDGIcon number="1" size="md" />
+              <SDGIcon number="5" size="md" />
+              <SDGIcon number="10" size="md" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              Healthy Human Capital
             </h1>
             <p className="text-xl text-white/90 mb-4">
               "Universal Prevent, Care & Thrive"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Ensure every person reaches a minimum baseline of physical and mental health 
-              required for flourishing (raise AarogyaShree toward 0.90).
+              required for flourishing, raising AarogyaShree toward 0.90 through comprehensive, 
+              accessible, and equitable healthcare systems.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Core Interventions */}
-      <section className="py-16 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-12"
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            Core Interventions
-          </motion.h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Core Interventions</h2>
+            <p className="text-xl text-gray-600">Building resilient health systems for universal coverage</p>
+          </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {interventions.map((intervention, index) => {
               const IconComponent = intervention.icon;
               return (
@@ -110,7 +186,7 @@ export default function HealthyHumanCapital() {
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold mb-2">{intervention.title}</h3>
-                          <p className="text-muted-foreground">{intervention.description}</p>
+                          <p className="text-gray-600">{intervention.description}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -122,61 +198,141 @@ export default function HealthyHumanCapital() {
         </div>
       </section>
 
-      {/* KPIs Section */}
-      <section className="py-16 px-6 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            Key Performance Indicators
-          </motion.h2>
-          
-          <div className="grid gap-4">
-            {kpis.map((kpi, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm"
-              >
-                <Target className="w-5 h-5 text-red-600 flex-shrink-0" />
-                <span className="text-sm">{kpi}</span>
-              </motion.div>
-            ))}
+      {/* Community Health Focus */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Community-Centered Healthcare Delivery
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Transforming healthcare from hospital-centric to community-based models that reach 
+                every person where they live, work, and learn. Our approach prioritizes prevention, 
+                early intervention, and culturally appropriate care.
+              </p>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-center gap-3">
+                  <Stethoscope className="w-5 h-5 text-red-600" />
+                  <span>Door-to-door health screenings and preventive care</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Users className="w-5 h-5 text-red-600" />
+                  <span>Community health workers as first point of contact</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Activity className="w-5 h-5 text-red-600" />
+                  <span>Digital health records linking all levels of care</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Brain className="w-5 h-5 text-red-600" />
+                  <span>Integrated mental health and social support services</span>
+                </li>
+              </ul>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <img 
+                src={communityHealth} 
+                alt="Community Health Programs"
+                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Early Wins */}
-      <section className="py-16 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-12"
+      {/* KPIs and Early Wins */}
+      <section className="py-20 bg-red-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* KPIs */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Target className="w-8 h-8 text-red-600" />
+                <h3 className="text-2xl font-bold text-gray-900">Key Performance Indicators</h3>
+              </div>
+              <div className="space-y-3">
+                {kpis.map((kpi, index) => (
+                  <div key={index} className="flex items-start gap-3 p-3 bg-white rounded-lg">
+                    <TrendingUp className="w-5 h-5 text-red-600 mt-0.5" />
+                    <span className="text-gray-700">{kpi}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Early Wins */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Clock className="w-8 h-8 text-red-600" />
+                <h3 className="text-2xl font-bold text-gray-900">Three High-Leverage Early Wins</h3>
+              </div>
+              <div className="space-y-4">
+                {earlyWins.map((win, index) => (
+                  <div key={index} className="p-4 bg-white rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Award className="w-5 h-5 text-red-600" />
+                      <span className="font-semibold text-red-900">{win.timeline}</span>
+                    </div>
+                    <h4 className="font-semibold text-gray-900 mb-1">{win.title}</h4>
+                    <p className="text-gray-600 text-sm">{win.description}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Governance & Financing */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            Three High-Leverage Early Wins
-          </motion.h2>
-          
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Governance & Financing</h2>
+            <p className="text-xl text-gray-600">Sustainable financing mechanisms for universal health coverage</p>
+          </motion.div>
+
           <div className="grid md:grid-cols-3 gap-6">
-            {earlyWins.map((win, index) => (
+            {governance.map((item, index) => (
               <motion.div
-                key={win.title}
+                key={item.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <Card className="h-full">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Clock className="w-6 h-6 text-red-600" />
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-red-100 rounded-lg">
+                        <Shield className="w-6 h-6 text-red-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                        <p className="text-gray-600">{item.description}</p>
+                      </div>
                     </div>
-                    <div className="text-sm text-red-600 font-semibold mb-2">{win.timeline}</div>
-                    <h3 className="text-lg font-semibold mb-3">{win.title}</h3>
-                    <p className="text-sm text-muted-foreground">{win.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -185,87 +341,74 @@ export default function HealthyHumanCapital() {
         </div>
       </section>
 
-      {/* Governance & Financing */}
-      <section className="py-16 px-6 bg-red-50">
-        <div className="container mx-auto max-w-4xl">
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-8"
+      {/* Risks & Mitigations */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            Governance & Financing
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="p-6 text-center">
-                <Shield className="w-8 h-8 text-red-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Health Guarantee Law</h3>
-                <p className="text-sm text-muted-foreground">Minimum publicly funded package</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6 text-center">
-                <Award className="w-8 h-8 text-red-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Blended Finance</h3>
-                <p className="text-sm text-muted-foreground">Progressive taxation + concessional finance + impact bonds</p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6 text-center">
-                <Users className="w-8 h-8 text-red-600 mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Public-Private Delivery</h3>
-                <p className="text-sm text-muted-foreground">Partnerships with strict equity covenants</p>
-              </CardContent>
-            </Card>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Risks & Mitigations</h2>
+            <p className="text-xl text-gray-600">Proactive strategies for sustainable health system transformation</p>
+          </motion.div>
+
+          <div className="space-y-8">
+            {risks.map((risk, index) => (
+              <motion.div
+                key={risk.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2 }}
+              >
+                <Card className="hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <Shield className="w-6 h-6 text-red-600" />
+                          <h3 className="text-xl font-semibold text-gray-900">{risk.title}</h3>
+                        </div>
+                        <p className="text-gray-600">{risk.description}</p>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <Lightbulb className="w-6 h-6 text-green-600" />
+                          <h4 className="text-lg font-semibold text-gray-900">Mitigation Strategy</h4>
+                        </div>
+                        <p className="text-gray-600">{risk.mitigation}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Risk Mitigation */}
-      <section className="py-16 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <motion.h2 
-            className="text-3xl font-bold text-center mb-12"
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-r from-red-600 to-pink-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-white"
           >
-            Risks & Mitigations
-          </motion.h2>
-          
-          <div className="space-y-6">
-            <Card className="border-l-4 border-l-amber-500">
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h3 className="font-semibold text-amber-700 mb-2">Risk: Weak Primary Governance</h3>
-                    <p className="text-sm text-muted-foreground">Limited institutional capacity</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-green-700 mb-2">Mitigation</h3>
-                    <p className="text-sm text-muted-foreground">Ring-fenced budgets, citizen scorecards</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-l-4 border-l-amber-500">
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h3 className="font-semibold text-amber-700 mb-2">Risk: Human Resource Shortage</h3>
-                    <p className="text-sm text-muted-foreground">Insufficient healthcare workers</p>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-green-700 mb-2">Mitigation</h3>
-                    <p className="text-sm text-muted-foreground">Accelerated mid-level provider training, tele-supervision</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+            <h2 className="text-4xl font-bold mb-6">Health is a Human Right</h2>
+            <p className="text-xl mb-8 text-white/90">
+              Join us in building healthcare systems that leave no one behind. 
+              Every person deserves access to quality, affordable, and dignified healthcare.
+            </p>
+            <Button 
+              size="lg"
+              className="bg-white text-red-600 hover:bg-gray-100 font-semibold px-8 py-4 text-lg"
+            >
+              Support Universal Health Coverage
+            </Button>
+          </motion.div>
         </div>
       </section>
     </div>
