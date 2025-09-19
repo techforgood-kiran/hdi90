@@ -3,8 +3,8 @@ import { useCountdown } from '@/hooks/useCountdown';
 import { Clock } from 'lucide-react';
 
 export const BigCountdownTimer = () => {
-  // New Year's Eve 2031 - December 31, 2031 at 11:59:59 PM
-  const targetDate = new Date('2032-01-01T00:00:00');
+  // New Year's Eve 2030 transitioning to 2031 - January 1st, 2031 at 12:00:00 AM
+  const targetDate = new Date('2031-01-01T00:00:00');
   const timeLeft = useCountdown(targetDate);
 
   if (timeLeft.totalMilliseconds <= 0) {
@@ -53,7 +53,7 @@ export const BigCountdownTimer = () => {
           </div>
 
           <p className="text-xl md:text-2xl text-red-200 mb-12 max-w-3xl mx-auto">
-            The countdown to achieving our collective goal of HDI 0.90 by New Year's Eve 2031
+            The countdown to achieving our collective goal of HDI 0.90 by January 1st, 2031
           </p>
 
           {/* Timer Display */}
