@@ -297,9 +297,26 @@ export default function Methodology() {
 
           <div className="mt-6">
             <h3 className="text-lg font-semibold">Aggregation & sensitivity</h3>
-            <p>Final HDI with floor to avoid zeros:</p>
-            <pre className="bg-slate-900 text-white p-3 rounded text-sm"><code>HDI_2.0 = (∏(k=1 to 4) max(ε, S_k))^(1/4), ε = 1e-4</code></pre>
-            <p className="text-sm text-muted-foreground mt-2">Perform sensitivity analysis (elasticities) and Monte Carlo uncertainty propagation. Report CI and share underlying codebook for transparency.</p>
+            <p className="mb-4">Final HDI with floor to avoid zeros:</p>
+            
+            {/* Main Equation - Prominently Displayed */}
+            <div className="bg-gradient-to-br from-hdi-gold/10 to-hdi-navy/10 border-2 border-hdi-gold rounded-lg p-6 mb-4">
+              <div className="text-center">
+                <h4 className="text-sm font-semibold text-hdi-navy mb-3 uppercase tracking-wide">HDI 2.0 Formula</h4>
+                <div className="bg-white border-2 border-hdi-navy rounded-lg p-4 shadow-lg">
+                  <code className="text-2xl md:text-3xl font-bold text-hdi-navy font-mono">
+                    HDI₂.₀ = (∏<sub className="text-lg">k=1 to 4</sub> max(ε, S<sub className="text-lg">k</sub>))<sup className="text-lg">1/4</sup>
+                  </code>
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <code className="text-lg text-gray-600 font-mono">
+                      where ε = 1×10⁻⁴
+                    </code>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-sm text-muted-foreground">Perform sensitivity analysis (elasticities) and Monte Carlo uncertainty propagation. Report CI and share underlying codebook for transparency.</p>
           </div>
         </Card>
       </section>
