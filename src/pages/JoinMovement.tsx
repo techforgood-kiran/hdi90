@@ -207,10 +207,10 @@ export default function JoinMovement() {
       perks: [
         "Everything in Leader Tier",
         "Direct access to UN Sustainable Development Goals working groups",
-        "Invitation to World Economic Forum & similar high-level summits",
+        "Lifetime access to all HDI90 digital courses & future content (worth $10,000+)",
         "Personal documentary feature about your impact journey",
         "Legacy fund management: multiply your impact through strategic investments",
-        "Private jet travel credits for global volunteering missions",
+        "Monthly featured spotlight in HDI90's global newsletter (500K+ subscribers)",
         "Dedicated team to amplify your personal brand & thought leadership",
       ],
       impact:
