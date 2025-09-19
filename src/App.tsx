@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Index from "./pages/Index";
 import HDICalculator from "./pages/HDICalculator";
 import Methodology from "./pages/Methodology";
@@ -23,20 +25,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/hdi-calculator" element={<HDICalculator />} />
           <Route path="/methodology" element={<Methodology />} />
+          <Route path="/principles" element={<Principles />} />
           <Route path="/join-movement" element={<JoinMovement />} />
           <Route path="/missions/healthy-human-capital" element={<HealthyHumanCapital />} />
           <Route path="/missions/learning-to-lead" element={<LearningToLead />} />
           <Route path="/missions/flourishing-societies" element={<FlourishingSocieties />} />
           <Route path="/missions/regenerate-prosper" element={<RegenerateProsper />} />
           <Route path="/missions/enablers" element={<CrossMissionEnablers />} />
-          <Route path="/principles" element={<Principles />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ScrollToTopButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
