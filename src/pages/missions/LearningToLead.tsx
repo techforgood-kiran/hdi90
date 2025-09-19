@@ -73,10 +73,22 @@ export default function LearningToLead() {
             <p className="text-xl text-white/90 mb-4">
               "Education for Capability & Character"
             </p>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto mb-8">
               Move whole-population learning outcomes and opportunity access to world-class levels 
               so the Education Score contributes to 0.90.
             </p>
+            <Button 
+              asChild
+              className="bg-white text-blue-600 hover:bg-white/90"
+            >
+              <a 
+                href="https://www.aurobindokalam.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Aurobindo Kalam AI Gurukul
+              </a>
+            </Button>
           </motion.div>
         </div>
       </section>
