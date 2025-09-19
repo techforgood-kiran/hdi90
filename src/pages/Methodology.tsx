@@ -48,10 +48,6 @@ export default function Methodology() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
           </Button>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            <circle cx="12" cy="12" r="10" stroke="hsl(var(--primary))" strokeWidth="1.2"/>
-            <path d="M7 12h10M12 7v10" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round"/>
-          </svg>
           <div>
             <div className="text-lg font-semibold">Holistic Development Index</div>
             <div className="text-sm text-muted-foreground">HDI 2.0 — measuring human flourishing for the 21st century</div>
