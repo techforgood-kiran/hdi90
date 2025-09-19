@@ -324,6 +324,9 @@ export default function HDIWizardWithSaveAndPDF({ onScores }: HDIWizardProps) {
             <CardDescription>
               Comprehensive holistic development evaluation with auto-save functionality
             </CardDescription>
+            <p className="text-sm text-muted-foreground mt-2 italic">
+              These questions ask for some proxy scores. In reality, there will be a comprehensive questionnaire in the app in the native language of the user/surveyor.
+            </p>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="sm" onClick={clearProgress}>
