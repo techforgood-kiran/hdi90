@@ -163,8 +163,8 @@ export default function JoinMovement() {
   const commitmentTiers = [
     {
       name: "Community Volunteer",
-      commitment: "2-4 hours/week",
-      contribution: "Time + Skills",
+      commitment: "2-4 hours/week + $1/month",
+      contribution: "Time + Skills + Support",
       benefits: [
         "Personal development assessment and growth roadmap",
         "Skills training and certification in community impact areas",
