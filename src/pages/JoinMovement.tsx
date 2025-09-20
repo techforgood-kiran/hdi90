@@ -166,13 +166,13 @@ export default function JoinMovement() {
       commitment: "2-4 hours/week",
       contribution: "Time + Skills",
       benefits: [
-        "HDI 2.0 assessment and personalized development plan",
-        "Skills certification in your chosen impact area",
-        "Access to research methods and data analysis training",
-        "Quarterly progress reports showing your community impact",
-        "Professional development through systems thinking workshops",
-        "Free access to premium HDI 2.0 tools and resources",
-        "Networking opportunities with global development professionals"
+        "Personal development assessment and growth roadmap",
+        "Skills training and certification in community impact areas",
+        "Workshop access on problem-solving and project management",
+        "Impact reports showing how your contributions create change",
+        "Leadership development through real-world experience",
+        "Access to exclusive learning resources and webinars",
+        "Network with changemakers across industries and backgrounds"
       ]
     },
     {
@@ -181,13 +181,13 @@ export default function JoinMovement() {
       contribution: "Leadership + Resources",
       benefits: [
         "Everything in Community Volunteer",
-        "Access to advanced impact measurement tools",
-        "Mentorship opportunities with development professionals",
-        "Priority placement in high-impact projects",
-        "Co-authorship opportunities on research publications",
-        "Speaking opportunities at conferences and events",
-        "Monthly one-on-one coaching sessions with HDI experts",
-        "Early access to new HDI 2.0 research and methodologies"
+        "Advanced training in project management and impact measurement",
+        "One-on-one mentoring with experienced professionals and academics",
+        "Leadership opportunities in high-impact community projects",
+        "Platform to share your work and insights with broader audiences",
+        "Speaking opportunities at events and conferences",
+        "Monthly coaching sessions for career and personal development",
+        "Early access to new programs, research findings, and opportunities"
       ]
     },
     {
@@ -196,13 +196,13 @@ export default function JoinMovement() {
       contribution: "Strategy + Implementation",
       benefits: [
         "Everything in Systems Catalyst",
-        "Direct collaboration with academic and policy institutions",
-        "Grant writing and fundraising training",
-        "Access to impact investing networks",
-        "Advisory board positions in partner organizations",
-        "Recognition in HDI 2.0 annual impact report",
-        "Exclusive access to HDI 2.0 leadership summit and retreats",
-        "Personal branding support and thought leadership opportunities"
+        "Direct partnerships with universities, NGOs, and policy organizations",
+        "Training in grant writing, fundraising, and social entrepreneurship",
+        "Access to impact investing networks and funding opportunities",
+        "Advisory roles in partner organizations and new initiatives",
+        "Featured recognition in annual reports and media coverage",
+        "Exclusive retreats, summits, and networking with global leaders",
+        "Personal branding support and thought leadership development"
       ]
     }
   ];
