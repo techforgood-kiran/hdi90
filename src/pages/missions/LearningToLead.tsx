@@ -143,7 +143,7 @@ export default function LearningToLead() {
               <SDGIcon number="10" size="md" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Learning to Lead
+              VidyaShri
             </h1>
             <p className="text-xl text-white/90 mb-4">
               "Education for Capability & Character"

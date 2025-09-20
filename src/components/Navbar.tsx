@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const missionItems = [
     { to: '/missions/healthy-human-capital', label: 'AarogyaShri' },
-    { to: '/missions/learning-to-lead', label: 'Learning to Lead' },
+    { to: '/missions/learning-to-lead', label: 'VidyaShri' },
     { to: '/missions/flourishing-societies', label: 'Flourishing Societies' },
     { to: '/missions/krishi', label: 'FarmerFirst' },
     { to: '/missions/regenerate-prosper', label: 'Regenerate & Prosper' },
