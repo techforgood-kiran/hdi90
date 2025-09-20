@@ -171,7 +171,6 @@ export default function JoinMovement() {
         "Workshop access on problem-solving and project management",
         "Impact reports showing how your contributions create change",
         "Leadership development through real-world experience",
-        "Access to exclusive learning resources and webinars",
         "Network with changemakers across industries and backgrounds"
       ]
     },
@@ -196,6 +195,7 @@ export default function JoinMovement() {
       contribution: "Strategy + Implementation",
       benefits: [
         "Everything in Systems Catalyst",
+        "Access to exclusive learning resources and webinars",
         "Direct partnerships with universities, NGOs, and policy organizations",
         "Training in grant writing, fundraising, and social entrepreneurship",
         "Access to impact investing networks and funding opportunities",
