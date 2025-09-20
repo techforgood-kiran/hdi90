@@ -185,7 +185,7 @@ export default function JoinMovement() {
         "One-on-one mentoring with experienced professionals and academics",
         "Leadership opportunities in high-impact community projects",
         "Platform to share your work and insights with broader audiences",
-        "Speaking opportunities at events and conferences",
+        "Access to courses and mobile app community",
         "Monthly coaching sessions for career and personal development",
         "Early access to new programs, research findings, and opportunities"
       ]
