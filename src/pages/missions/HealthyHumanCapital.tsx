@@ -148,7 +148,7 @@ export default function HealthyHumanCapital() {
               <SDGIcon number="10" size="md" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Healthy Human Capital
+              AarogyaShri
             </h1>
             <p className="text-xl text-white/90 mb-4">
               "Universal Prevent, Care & Thrive"
