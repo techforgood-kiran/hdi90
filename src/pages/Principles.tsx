@@ -332,7 +332,7 @@ const Principles = () => {
             <Button asChild size="lg" className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold">
               <Link to="/hdi-calculator">Calculate Your HDI 2.0</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-hdi-navy">
+            <Button asChild size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold border-2 border-yellow-500 shadow-lg">
               <Link to="/methodology">Learn About HDI 2.0</Link>
             </Button>
           </div>
