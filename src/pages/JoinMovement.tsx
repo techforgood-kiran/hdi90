@@ -347,15 +347,17 @@ export default function JoinMovement() {
                   <p className="mt-2 text-muted-foreground">Develop tailored programs for foundations, family offices, and impact investors</p>
                 </div>
               </div>
-              <Button 
-                asChild
-                size="lg" 
-                className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold"
-              >
-                <a href="mailto:sai@hdi90.com?subject=Philanthropy/CSR Partnership Inquiry&body=Hello, I am interested in exploring strategic partnership opportunities with HDI 2.0.">
-                  Discuss Partnership Opportunities
-                </a>
-              </Button>
+              <div className="mt-8">
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-base md:text-lg w-full sm:w-auto min-w-[280px]"
+                >
+                  <a href="mailto:sai@hdi90.com?subject=Philanthropy/CSR Partnership Inquiry&body=Hello, I am interested in exploring strategic partnership opportunities with HDI 2.0.">
+                    Discuss Partnership Opportunities
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
