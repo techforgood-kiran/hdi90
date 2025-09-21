@@ -348,11 +348,13 @@ export default function JoinMovement() {
                 </div>
               </div>
               <Button 
+                asChild
                 size="lg" 
                 className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold"
-                onClick={() => window.location.href = 'mailto:sai@hdi90.com?subject=Philanthropy/CSR Partnership Inquiry&body=Hello, I am interested in exploring strategic partnership opportunities with HDI 2.0.'}
               >
-                Discuss Partnership Opportunities
+                <a href="mailto:sai@hdi90.com?subject=Philanthropy/CSR Partnership Inquiry&body=Hello, I am interested in exploring strategic partnership opportunities with HDI 2.0.">
+                  Discuss Partnership Opportunities
+                </a>
               </Button>
             </div>
           </div>
