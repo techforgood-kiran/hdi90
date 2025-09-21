@@ -348,15 +348,9 @@ export default function JoinMovement() {
                 </div>
               </div>
               <div className="mt-8">
-                <Button 
-                  asChild
-                  size="lg" 
-                  className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-4 text-base md:text-lg w-full sm:w-auto min-w-[280px]"
-                >
-                  <a href="mailto:sai@hdi90.com?subject=Philanthropy/CSR Partnership Inquiry&body=Hello, I am interested in exploring strategic partnership opportunities with HDI 2.0.">
-                    Discuss Partnership Opportunities
-                  </a>
-                </Button>
+                <div className="inline-block bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700">
+                  For partnerships. email to sai@hdi90.com
+                </div>
               </div>
             </div>
           </div>
