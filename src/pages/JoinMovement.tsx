@@ -102,13 +102,13 @@ function SystemsApproach() {
                       <div className="text-sm text-white/90">{area.metrics}</div>
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="text-sm text-white/70">
                         <span className="font-semibold text-hdi-gold">{area.volunteers}</span> active volunteers
                       </div>
                       <Button 
                         size="sm" 
-                        className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold"
+                        className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold w-full sm:w-auto text-xs sm:text-sm px-3 py-2"
                       >
                         Join Team
                       </Button>
@@ -148,9 +148,10 @@ function SystemsApproach() {
             </div>
             <Button 
               size="lg" 
-              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-8 py-3"
+              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
             >
-              Begin Your Systems Impact Journey
+              <span className="hidden sm:inline">Begin Your Systems Impact Journey</span>
+              <span className="sm:hidden">Start Impact Journey</span>
             </Button>
           </div>
         </motion.div>
@@ -316,8 +317,9 @@ export default function JoinMovement() {
                       </ul>
                     </div>
 
-                    <Button className="w-full bg-primary hover:bg-primary/90">
-                      Join as {tier.name}
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-sm sm:text-base py-2 sm:py-3">
+                      <span className="hidden sm:inline">Join as {tier.name}</span>
+                      <span className="sm:hidden">Join as {tier.name.split(' ')[0]}</span>
                     </Button>
                   </CardContent>
                 </Card>
