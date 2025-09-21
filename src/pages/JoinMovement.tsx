@@ -324,6 +324,38 @@ export default function JoinMovement() {
               </motion.div>
             ))}
           </div>
+          
+          {/* Philanthropy/CSR/HNI Section */}
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-br from-hdi-gold/10 to-hdi-blue/10 border-2 border-hdi-gold/30 rounded-xl p-8">
+              <h3 className="text-2xl font-bold mb-4 text-hdi-navy">Philanthropy, CSR & HNI Partnerships</h3>
+              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+                For organizations and high net worth individuals seeking strategic impact partnerships, 
+                custom program development, or large-scale initiative funding.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mb-8 text-sm">
+                <div className="bg-white/80 p-4 rounded-lg">
+                  <strong className="text-hdi-navy">Corporate CSR Programs</strong>
+                  <p className="mt-2 text-muted-foreground">Align your corporate social responsibility initiatives with measurable HDI 2.0 outcomes</p>
+                </div>
+                <div className="bg-white/80 p-4 rounded-lg">
+                  <strong className="text-hdi-navy">Strategic Philanthropy</strong>
+                  <p className="mt-2 text-muted-foreground">Design evidence-based giving strategies with transparent impact measurement</p>
+                </div>
+                <div className="bg-white/80 p-4 rounded-lg">
+                  <strong className="text-hdi-navy">Custom Partnerships</strong>
+                  <p className="mt-2 text-muted-foreground">Develop tailored programs for foundations, family offices, and impact investors</p>
+                </div>
+              </div>
+              <Button 
+                size="lg" 
+                className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold"
+                onClick={() => window.location.href = 'mailto:sai@hdi90.com?subject=Philanthropy/CSR Partnership Inquiry&body=Hello, I am interested in exploring strategic partnership opportunities with HDI 2.0.'}
+              >
+                Discuss Partnership Opportunities
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
