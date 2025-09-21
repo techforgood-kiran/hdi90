@@ -205,8 +205,8 @@ export default function Methodology() {
               <Button onClick={() => navigate('/hdi-calculator')}>
                 Start Individual Assessment
               </Button>
-              <div className="text-sm text-muted-foreground">
-                email to sai@hdi90.com
+              <div className="inline-block bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700">
+                For partnerships. email to sai@hdi90.com
               </div>
             </div>
           </div>
@@ -233,8 +233,8 @@ export default function Methodology() {
                   <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => window.open('/hdi-methodology.pdf', '_blank')}>
                     📄 Open Full PDF Document
                   </Button>
-                  <div className="text-sm text-muted-foreground">
-                    email to sai@hdi90.com
+                  <div className="inline-block bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700">
+                    For partnerships. email to sai@hdi90.com
                   </div>
                 </div>
               </div>
