@@ -29,33 +29,33 @@ import puraDevelopment from '@/assets/pura-development.jpg';
 export default function MissionKrishi() {
   const interventions = [
     {
-      title: "Farm-to-Plate Networks",
-      description: "Direct farmer-consumer linkages bypassing corporate middlemen, ensuring fair prices and fresh produce",
+      title: "Farm-to-Plate Social Enterprises",
+      description: "Farmer-owned social ventures creating direct supply chains, ensuring fair prices and community wealth retention",
       icon: Truck
     },
     {
-      title: "Community Seed Banks",
-      description: "Local seed preservation and sharing systems to maintain biodiversity and prevent corporate seed monopolies",
+      title: "Seed Sovereignty Social Cooperatives",
+      description: "Community-owned seed enterprises preserving biodiversity while generating sustainable income streams",
       icon: Sprout
     },
     {
-      title: "PURA Digital Hubs",
-      description: "Village-level digital connectivity and e-commerce platforms for direct market access",
+      title: "PURA Digital Social Ventures",
+      description: "Village-owned digital cooperatives providing connectivity, e-commerce, and financial services",
       icon: Wifi
     },
     {
-      title: "Organic Transition Support",
-      description: "Technical and financial assistance for farmers transitioning to chemical-free, natural farming methods",
+      title: "Organic Transition Social Enterprises",
+      description: "Farmer-led social businesses providing training, certification, and market access for chemical-free farming",
       icon: Leaf
     },
     {
-      title: "Village Processing Centers",
-      description: "Local food processing and value addition facilities owned and operated by farming communities",
+      title: "Community Processing Social Cooperatives",
+      description: "Farmer-owned value-addition enterprises keeping processing profits within local communities",
       icon: Users
     },
     {
-      title: "Rural Healthcare Integration",
-      description: "Primary healthcare centers integrated with nutrition and food safety education programs",
+      title: "Rural Health-Agriculture Social Ventures",
+      description: "Integrated social enterprises connecting nutrition, food safety, and primary healthcare services",
       icon: Heart
     }
   ];
@@ -152,9 +152,9 @@ export default function MissionKrishi() {
               "Food Freedom Through Village Sovereignty"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Transforming agriculture from corporate control to community ownership through PURA-powered 
-              villages, direct farm-to-plate networks, and chemical-free food production that serves 
-              people over profit across the Global South.
+              Transforming agriculture through farmer-led social enterprises that create direct 
+              farm-to-plate networks, community-owned food systems, and chemical-free production. 
+              Social entrepreneurship as the foundation for food sovereignty across the Global South.
             </p>
           </motion.div>
         </div>

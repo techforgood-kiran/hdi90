@@ -28,33 +28,33 @@ import greenTransition from '@/assets/green-transition.jpg';
 export default function RegenerateProsper() {
   const interventions = [
     {
-      title: "National 10-year Transition Plans",
-      description: "Energy decarbonization, regenerative agriculture, urban circularity with just transition pathways",
+      title: "Green Transition Social Enterprises",
+      description: "Community-owned social ventures driving energy decarbonization and regenerative practices with local ownership",
       icon: Globe
     },
     {
-      title: "Nature-Based Solutions",
-      description: "Reforestation, watershed restoration, peatland protection, and biodiversity conservation at scale",
+      title: "Ecosystem Restoration Social Cooperatives",
+      description: "Community-based social enterprises earning revenue through reforestation, watershed restoration, and conservation",
       icon: TreePine
     },
     {
-      title: "Rural Livelihood Transition",
-      description: "Finance & training for agroecology, sustainable fisheries, eco-tourism, and green value chains",
+      title: "Rural Green Economy Social Ventures",
+      description: "Local social enterprises in agroecology, sustainable fisheries, eco-tourism creating community wealth",
       icon: Leaf
     },
     {
-      title: "Circular Economy Policy",
-      description: "Materials-as-service, extended producer responsibility, and zero-waste manufacturing systems",
+      title: "Circular Economy Social Enterprises",
+      description: "Community-owned social ventures in waste management, recycling, and circular manufacturing",
       icon: Recycle
     },
     {
-      title: "Green Job Guarantees",
-      description: "Re-skilling programs for carbon-intensive sectors with guaranteed placement in green economy",
+      title: "Green Jobs Social Cooperatives",
+      description: "Worker-owned cooperatives providing green skills training and guaranteed employment in clean industries",
       icon: Briefcase
     },
     {
-      title: "Renewable Energy Democracy",
-      description: "Community-owned renewable energy systems and distributed grid infrastructure",
+      title: "Community Energy Social Enterprises",
+      description: "Village-owned renewable energy cooperatives generating clean power and community income",
       icon: Zap
     }
   ];
@@ -151,9 +151,9 @@ export default function RegenerateProsper() {
               "Net Positive Nature + Inclusive Growth"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Transform economic systems to regenerative, low-carbon, circular models that 
-              restore ecosystems while creating prosperity. Building a future where 
-              environmental health and human flourishing are inseparable.
+              Transform economic systems through environmental social enterprises that restore 
+              ecosystems while creating community prosperity. Social entrepreneurship as the 
+              engine for building regenerative economies where environmental and human flourishing unite.
             </p>
           </motion.div>
         </div>

@@ -27,33 +27,33 @@ import socialPrograms from '@/assets/social-programs.jpg';
 export default function FlourishingSocieties() {
   const interventions = [
     {
-      title: "Universal Social Protection Floor",
-      description: "Targeted cash transfers + activation pathways into work/education",
+      title: "Social Protection Enterprises",
+      description: "Community-owned social enterprises providing targeted support and pathways to economic opportunity",
       icon: Shield
     },
     {
-      title: "Affordable Dignified Housing",
-      description: "Basic services for slum/rural households with community-led development",
+      title: "Housing Cooperatives & Social Ventures",
+      description: "Social enterprises developing affordable housing with community ownership and dignified services",
       icon: Home
     },
     {
-      title: "Community-Based Programs",
-      description: "Mental health, social connectedness, and violence prevention initiatives",
+      title: "Community Wellness Social Enterprises",
+      description: "Locally-owned mental health, social connection, and violence prevention social businesses",
       icon: Heart
     },
     {
-      title: "Participatory Governance",
-      description: "Local HDI councils, grievance redress, and community budgeting mechanisms",
+      title: "Civic Engagement Social Platforms",
+      description: "Social enterprises facilitating participatory governance, community budgeting, and accountability",
       icon: Vote
     },
     {
-      title: "Work-Life Balance Policies",
-      description: "Parental leave, meaningful employment, and leisure policies for well-being",
+      title: "Work-Life Balance Social Ventures",
+      description: "Social enterprises creating meaningful employment, flexible work models, and well-being services",
       icon: Briefcase
     },
     {
-      title: "Social Cohesion Building",
-      description: "Inter-community dialogue, cultural preservation, and conflict resolution programs",
+      title: "Community Building Social Enterprises",
+      description: "Social ventures fostering dialogue, cultural preservation, and conflict resolution through business models",
       icon: Users
     }
   ];
@@ -149,9 +149,9 @@ export default function FlourishingSocieties() {
               "Happiness, Security & Civic Trust"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Build inclusive, resilient societies where every person can thrive through 
-              comprehensive social protection, civic participation, and community resilience. 
-              Raising measurable well-being to achieve a Happiness Score of 0.90.
+              Build inclusive, resilient societies through social entrepreneurship that creates 
+              sustainable social protection systems, community-owned enterprises, and locally-led 
+              solutions. Social enterprises as the primary vehicle for achieving a Happiness Score of 0.90.
             </p>
           </motion.div>
         </div>

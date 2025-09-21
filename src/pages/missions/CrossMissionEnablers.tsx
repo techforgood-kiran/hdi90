@@ -19,40 +19,40 @@ import Navbar from '@/components/Navbar';
 export default function CrossMissionEnablers() {
   const enablers = [
     {
-      title: "National HDI 2.0 Council",
-      description: "Cabinet-level body with multi-stakeholder seats, daily dashboard & quarterly public scorecards",
+      title: "Social Enterprise Council Network",
+      description: "Multi-stakeholder social enterprises with transparent impact dashboards and community scorecards",
       icon: Settings,
-      details: "Cross-sector coordination mechanism ensuring all missions work in harmony"
+      details: "Social entrepreneur-led coordination ensuring all missions create sustainable value"
     },
     {
-      title: "Data & Measurement",
-      description: "Harmonized HDI2.0 metrics, regular household surveys + satellite and administrative data",
+      title: "Impact Measurement Enterprises",
+      description: "Social enterprises specializing in HDI2.0 metrics, community surveys, and data analytics",
       icon: BarChart3,
-      details: "Open dashboards per district for transparency and accountability"
+      details: "Locally-owned enterprises providing transparency and accountability services"
     },
     {
-      title: "Digital Public Infrastructure (DPI)",
-      description: "Identity, payments, health & education records, learning platforms to scale services",
+      title: "Digital Social Infrastructure",
+      description: "Social enterprises building identity, payments, and service platforms with community ownership",
       icon: Smartphone,
-      details: "Foundational digital systems enabling efficient service delivery"
+      details: "Community-owned digital cooperatives enabling equitable access to services"
     },
     {
-      title: "Finance Architecture",
-      description: "Blended finance model: domestic progressive revenue + international concessional loans",
+      title: "Impact Finance Cooperatives",
+      description: "Social finance cooperatives blending community capital with impact investment",
       icon: DollarSign,
-      details: "Private impact capital + outcome bonds for sustainable funding"
+      details: "Community-owned financial institutions creating sustainable funding streams"
     },
     {
-      title: "Capacity & Localisation",
-      description: "Invest in public sector capability and devolve decision-making to districts",
+      title: "Local Social Enterprise Hubs",
+      description: "Community-based social enterprise incubators building local capacity and leadership",
       icon: Building,
-      details: "Operational units, delivery units, data teams at scale"
+      details: "Grassroots social entrepreneur development and support ecosystems"
     },
     {
-      title: "Global HDI90 Alliance",
-      description: "Knowledge transfer, pooled procurement (vaccines, ed tech), and matched funding",
+      title: "Global Social Enterprise Alliance",
+      description: "Network of social enterprises sharing knowledge, resources, and joint procurement",
       icon: Globe,
-      details: "International collaboration for shared learning and resources"
+      details: "Social entrepreneur-led international collaboration for scalable impact"
     }
   ];
 
@@ -94,8 +94,9 @@ export default function CrossMissionEnablers() {
               "Foundational Systems for All Countries"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Universal enablers that apply to all 195 countries, providing the institutional, 
-              technological, and financial infrastructure needed for all four missions to succeed.
+              Universal enablers powered by social entrepreneurship across all 195 countries, creating 
+              scalable social enterprises that provide institutional, technological, and financial 
+              infrastructure for sustainable development missions.
             </p>
           </motion.div>
         </div>

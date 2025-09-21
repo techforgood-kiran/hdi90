@@ -32,33 +32,33 @@ import communityHealth from '@/assets/community-health.jpg';
 export default function HealthyHumanCapital() {
   const interventions = [
     {
-      title: "Universal Primary Health Coverage",
-      description: "Prevention-first model with vaccines, maternal care, NCD screening, mental health integration",
+      title: "Community Health Social Enterprises",
+      description: "Local social ventures providing prevention-first healthcare with sustainable business models",
       icon: Shield
     },
     {
-      title: "Community Health Workforce",
-      description: "Task-shifting, digital supervision, telemedicine scale-up",
+      title: "Health Worker Cooperatives",
+      description: "Community-owned health worker cooperatives with peer support and shared ownership",
       icon: Users
     },
     {
-      title: "Nutrition & WASH Campaigns",
-      description: "Targeting first 1,000 days and adolescent girls",
+      title: "Nutrition & WASH Social Ventures",
+      description: "Social enterprises addressing malnutrition and sanitation through community-based solutions",
       icon: Heart
     },
     {
-      title: "Mental Health at Scale",
-      description: "School counseling, workplace mental health, suicide prevention",
+      title: "Mental Wellness Social Enterprises",
+      description: "Community-owned mental health social businesses integrating traditional and modern approaches",
       icon: Brain
     },
     {
-      title: "Maternal & Child Health",
-      description: "Comprehensive care from pregnancy through early childhood development",
+      title: "Maternal Care Social Cooperatives",
+      description: "Women-led social enterprises providing comprehensive maternal and child health services",
       icon: Baby
     },
     {
-      title: "Digital Health Infrastructure",
-      description: "Electronic health records, AI diagnostics, and remote monitoring systems",
+      title: "Health Tech Social Ventures",
+      description: "Community-owned digital health platforms prioritizing accessibility and local ownership",
       icon: Activity
     }
   ];
@@ -154,9 +154,9 @@ export default function HealthyHumanCapital() {
               "Universal Prevent, Care & Thrive"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Ensure every person reaches a minimum baseline of physical and mental health 
-              required for flourishing, raising AarogyaShree toward 0.90 through comprehensive, 
-              accessible, and equitable healthcare systems.
+              Ensure every person reaches optimal health through social entrepreneurship, creating 
+              community-owned healthcare enterprises that deliver comprehensive, accessible, and 
+              culturally appropriate health solutions. Social enterprises as the backbone of AarogyaShree 0.90.
             </p>
           </motion.div>
         </div>

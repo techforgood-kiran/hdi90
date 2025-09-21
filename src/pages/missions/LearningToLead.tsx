@@ -25,35 +25,35 @@ import digitalLearning from '@/assets/digital-learning.jpg';
 export default function LearningToLead() {
   const interventions = [
     {
-      title: "National Curriculum Reset",
-      description: "Foundational literacy & numeracy by age 10; socio-emotional & civic skills by secondary",
+      title: "Community Learning Social Enterprises",
+      description: "Local education social ventures delivering foundational skills through culturally relevant, community-owned models",
       icon: BookOpen
     },
     {
-      title: "Universal Vocational Access",
-      description: "Accredited vocational & digital micro-credentials linked to local labor markets",
+      title: "Vocational Training Social Cooperatives",
+      description: "Community-owned skill development enterprises linking training directly to local economic opportunities",
       icon: Award
     },
     {
-      title: "Teacher Force Multiplier",
-      description: "Intensive in-service retraining, coaching, and performance-linked incentives",
+      title: "Teacher Development Social Ventures",
+      description: "Social enterprises providing peer-to-peer teacher training, mentoring, and professional development",
       icon: Users
     },
     {
-      title: "Digital Learning Backbone",
-      description: "Digital learning platform + low-tech offline packages for rural inclusion",
+      title: "Educational Technology Cooperatives",
+      description: "Community-owned digital learning platforms prioritizing local control and accessibility",
       icon: Laptop
     },
     {
       title: "Aurobindo Kalam AI Gurukul",
-      description: "Advanced AI-powered learning platform for next-generation education",
+      description: "Social enterprise delivering AI-powered personalized learning with community ownership",
       icon: ExternalLink,
       isLink: true,
       url: "https://www.aurobindokalam.org"
     },
     {
-      title: "21st Century Skills Integration",
-      description: "Critical thinking, creativity, collaboration, and digital literacy across all levels",
+      title: "Life Skills Social Enterprises",
+      description: "Community-based social ventures integrating critical thinking, creativity, and civic engagement",
       icon: Brain
     }
   ];
@@ -149,9 +149,9 @@ export default function LearningToLead() {
               "Education for Capability & Character"
             </p>
             <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Transform education systems to deliver world-class learning outcomes and 
-              opportunity access for all, ensuring every learner develops the capabilities 
-              needed to lead and thrive in the 21st century.
+              Transform education through social entrepreneurship, creating community-owned learning 
+              enterprises that deliver world-class outcomes while building local capacity. Social 
+              ventures as the primary vehicle for developing 21st century capabilities and leadership.
             </p>
           </motion.div>
         </div>
