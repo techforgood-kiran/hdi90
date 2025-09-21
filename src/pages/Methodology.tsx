@@ -205,12 +205,9 @@ export default function Methodology() {
               <Button onClick={() => navigate('/hdi-calculator')}>
                 Start Individual Assessment
               </Button>
-              <Button 
-                variant="outline"
-                onClick={() => window.location.href = 'mailto:sai@hdi90.com?subject=Enterprise/Community Pilot Inquiry&body=Hello, I am interested in learning more about HDI 2.0 for my organization/community.'}
-              >
-                Enterprise / Community Pilot
-              </Button>
+              <div className="text-sm text-muted-foreground">
+                email to sai@hdi90.com
+              </div>
             </div>
           </div>
         </Card>
@@ -236,12 +233,9 @@ export default function Methodology() {
                   <Button className="bg-blue-600 hover:bg-blue-700" onClick={() => window.open('/hdi-methodology.pdf', '_blank')}>
                     📄 Open Full PDF Document
                   </Button>
-                  <Button 
-                    variant="outline"
-                    onClick={() => window.location.href = 'mailto:sai@hdi90.com?subject=Research Demo Request&body=Hello, I am interested in a research demo of HDI 2.0 methodology and implementation.'}
-                  >
-                    Request Research Demo
-                  </Button>
+                  <div className="text-sm text-muted-foreground">
+                    email to sai@hdi90.com
+                  </div>
                 </div>
               </div>
             </div>
