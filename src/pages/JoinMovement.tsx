@@ -205,6 +205,25 @@ export default function JoinMovement() {
         "Exclusive retreats, summits, and networking with global leaders",
         "Personal branding support and thought leadership development"
       ]
+    },
+    {
+      name: "Social Entrepreneur",
+      commitment: "Full-time + ₹50,000+ investment",
+      contribution: "Venture Creation + Capital",
+      benefits: [
+        "Everything in Movement Builder",
+        "Comprehensive incubation program with dedicated workspace",
+        "1:1 mentorship from successful social entrepreneurs and impact investors",
+        "Access to seed funding and investor networks (₹2-10 lakhs potential)",
+        "Business model development and market validation support",
+        "Revenue sharing opportunities from successful ventures (15-25% equity)",
+        "Advanced training in impact measurement, scaling, and sustainability",
+        "Direct partnerships with corporations, foundations, and government agencies",
+        "Global network access including international conferences and exchanges",
+        "Potential to earn ₹5-50 lakhs annually based on venture performance",
+        "Intellectual property support and legal framework assistance",
+        "Media coverage and thought leadership positioning"
+      ]
     }
   ];
 
@@ -287,7 +306,7 @@ export default function JoinMovement() {
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">Choose Your Level of Impact</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {commitmentTiers.map((tier, i) => (
               <motion.div
                 key={tier.name}
