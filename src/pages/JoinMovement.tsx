@@ -317,9 +317,9 @@ export default function JoinMovement() {
                       </ul>
                     </div>
 
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-sm sm:text-base py-2 sm:py-3">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-xs sm:text-sm md:text-base py-3 px-2 min-h-[44px] font-medium">
                       <span className="hidden sm:inline">Join as {tier.name}</span>
-                      <span className="sm:hidden">Join as {tier.name.split(' ')[0]}</span>
+                      <span className="sm:hidden text-center leading-tight">Join as<br/>{tier.name.split(' ')[0]}</span>
                     </Button>
                   </CardContent>
                 </Card>
@@ -379,8 +379,9 @@ export default function JoinMovement() {
               </div>
               
               <div className="text-center mt-8">
-                <Button className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-bold px-8 py-3 text-lg">
-                  Apply to be a Social Entrepreneur
+                <Button className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-bold px-4 sm:px-6 md:px-8 py-3 text-sm sm:text-base md:text-lg w-full sm:w-auto min-h-[44px]">
+                  <span className="hidden sm:inline">Apply to be a Social Entrepreneur</span>
+                  <span className="sm:hidden text-center leading-tight">Apply for Social<br/>Entrepreneur</span>
                 </Button>
               </div>
             </motion.div>
