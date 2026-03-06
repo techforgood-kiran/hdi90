@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Globe, Users, Sparkles, Send, CheckCircle, Leaf, BookOpen, Stethoscope, Wheat } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -68,42 +69,20 @@ const Serve = () => {
 
     setLoading(true);
 
-    // Build mailto body
-    const body = `
-VOLUNTEER APPLICATION — HDI90 Serve
-====================================
+    try {
+      const { data, error } = await supabase.functions.invoke('send-volunteer-email', {
+        body: form,
+      });
 
-Name: ${form.name}
-Email: ${form.email}
-Phone: ${form.phone || 'Not provided'}
-City: ${form.city || 'Not provided'}
+      if (error) throw error;
 
-CAUSE AREAS:
-${form.causes.join(', ')}
-
-SKILLS:
-${form.skills.join(', ') || 'Not specified'}
-
-AVAILABILITY:
-${form.availability.join(', ') || 'Not specified'}
-
-Hours per week: ${form.hoursPerWeek || 'Flexible'}
-
-SUPERPOWER:
-${form.superpower || 'Not shared yet'}
-
-WHY I WANT TO SERVE:
-${form.whyServe || 'Not shared yet'}
-
-DREAM PROJECT IDEA:
-${form.dreamProject || 'Not shared yet'}
-    `.trim();
-
-    const mailtoLink = `mailto:sai@hdi90.com?subject=${encodeURIComponent(`Volunteer Application: ${form.name}`)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoLink, '_blank');
-
-    setLoading(false);
-    setSubmitted(true);
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error('Submit error:', err);
+      toast({ title: 'Something went wrong', description: 'Please try again or email sai@hdi90.com directly.', variant: 'destructive' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -124,7 +103,7 @@ ${form.dreamProject || 'Not shared yet'}
               Thank You for Stepping Up! 🙏
             </h1>
             <p className="text-muted-foreground text-lg mb-6">
-              Your email client should have opened with your application details. Please send the email to complete your sign-up. We'll be in touch soon.
+              Your volunteer application has been sent successfully. Our team will review it and get back to you soon!
             </p>
             <Button onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', city: '', causes: [], skills: [], availability: [], hoursPerWeek: '', superpower: '', whyServe: '', dreamProject: '' }); }}>
               Submit Another Application
