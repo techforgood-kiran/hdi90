@@ -17,6 +17,7 @@ import MissionKrishi from "./pages/missions/MissionKrishi";
 import RegenerateProsper from "./pages/missions/RegenerateProsper";
 import CrossMissionEnablers from "./pages/missions/CrossMissionEnablers";
 import Principles from "./pages/Principles";
+import Serve from "./pages/Serve";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/missions/krishi" element={<MissionKrishi />} />
           <Route path="/missions/regenerate-prosper" element={<RegenerateProsper />} />
           <Route path="/missions/enablers" element={<CrossMissionEnablers />} />
+          <Route path="/serve" element={<Serve />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
