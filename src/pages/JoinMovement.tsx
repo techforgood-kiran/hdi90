@@ -167,7 +167,7 @@ function SystemsApproach() {
 export default function JoinMovement() {
   const commitmentTiers = [
     {
-      name: "Community Volunteer",
+      name: "Partner — Explorer",
       commitment: "7 hours/week",
       contribution: "Time + Skills",
       benefits: [
