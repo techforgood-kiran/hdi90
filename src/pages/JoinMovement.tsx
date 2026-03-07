@@ -148,13 +148,15 @@ function SystemsApproach() {
                 <span className="text-sm">Research-grade methodology</span>
               </div>
             </div>
-            <Button 
-              size="lg" 
-              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
-            >
-              <span className="hidden sm:inline">Begin Your Systems Impact Journey</span>
-              <span className="sm:hidden">Start Impact Journey</span>
-            </Button>
+            <Link to="/service">
+              <Button 
+                size="lg" 
+                className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
+              >
+                <span className="hidden sm:inline">Begin Your Systems Impact Journey</span>
+                <span className="sm:hidden">Start Impact Journey</span>
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
