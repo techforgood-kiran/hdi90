@@ -195,11 +195,11 @@ export default function JoinMovement() {
       ]
     },
     {
-      name: "Movement Builder",
+      name: "Partner — Architect",
       commitment: "28 hours/week",
       contribution: "Strategy + Implementation",
       benefits: [
-        "Everything in Systems Catalyst",
+        "Everything in Builder tier",
         "Access to exclusive learning resources and webinars",
         "Direct partnerships with universities, NGOs, and policy organizations",
         "Training in grant writing, fundraising, and social entrepreneurship",
