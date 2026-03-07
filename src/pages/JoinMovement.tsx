@@ -337,8 +337,18 @@ export default function JoinMovement() {
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold mb-2 text-hdi-navy">Transform Your Purpose Into Profit</h3>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Launch your ikigai-based social enterprise with comprehensive incubation, mentorship, and funding support. 
-                  Turn your unique purpose into sustainable impact and meaningful income.
+                  Launch your ikigai-based social enterprise with comprehensive incubation, mentorship, and network support. 
+                  <strong className="text-hdi-navy"> Zero money needed. Only your time.</strong>
+                </p>
+              </div>
+
+              {/* Financial Freedom Guarantee */}
+              <div className="bg-gradient-to-r from-hdi-gold/20 to-hdi-green/20 border-2 border-hdi-gold/40 rounded-xl p-6 mb-8 text-center">
+                <div className="text-3xl font-extrabold text-hdi-navy mb-2">🚀 Financial Freedom in 5 Years — Guaranteed</div>
+                <p className="text-muted-foreground max-w-2xl mx-auto text-base">
+                  We don't want your money. We want your <strong>time, passion, and commitment</strong>. 
+                  Invest yourself — not your wallet — and we'll equip you with everything you need to build a 
+                  thriving, purpose-driven business. If you show up consistently, financial freedom isn't a dream — it's the plan.
                 </p>
               </div>
               
@@ -347,7 +357,7 @@ export default function JoinMovement() {
                   <h4 className="font-bold text-lg mb-3 text-hdi-navy">Your Investment</h4>
                   <div className="space-y-2 text-sm">
                     <div><strong>Time:</strong> Full-time commitment</div>
-                    <div><strong>Capital:</strong> ₹50,000+ initial investment</div>
+                    <div><strong>Capital:</strong> ₹0 — completely free to join</div>
                     <div><strong>Mindset:</strong> Purpose-driven entrepreneurship</div>
                   </div>
                 </div>
@@ -357,7 +367,7 @@ export default function JoinMovement() {
                   <ul className="space-y-1 text-sm">
                     <li>• Ikigai-based business model development</li>
                     <li>• 1:1 mentorship from successful entrepreneurs</li>
-                    <li>• Seed funding access (₹2-10 lakhs potential)</li>
+                    <li>• Seed funding access & investor connections</li>
                     <li>• Purpose-driven market validation</li>
                     <li>• Comprehensive incubation program</li>
                     <li>• Global impact network access</li>
@@ -365,14 +375,14 @@ export default function JoinMovement() {
                 </div>
                 
                 <div>
-                  <h4 className="font-bold text-lg mb-3 text-hdi-navy">Your Returns</h4>
+                  <h4 className="font-bold text-lg mb-3 text-hdi-navy">Your 5-Year Outcome</h4>
                   <ul className="space-y-1 text-sm">
-                    <li>• <strong>₹5-50 lakhs</strong> annual earning potential</li>
-                    <li>• 15-25% equity in successful ventures</li>
-                    <li>• Meaningful work aligned with purpose</li>
+                    <li>• <strong>Financial independence</strong> through your own venture</li>
+                    <li>• Equity ownership in a purpose-driven business</li>
+                    <li>• Meaningful work aligned with your ikigai</li>
                     <li>• Scalable impact on communities</li>
                     <li>• Thought leadership positioning</li>
-                    <li>• Legacy business creation</li>
+                    <li>• A legacy that outlasts you</li>
                   </ul>
                 </div>
               </div>
