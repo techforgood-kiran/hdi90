@@ -164,8 +164,8 @@ export default function JoinMovement() {
   const commitmentTiers = [
     {
       name: "Community Volunteer",
-      commitment: "2+ hours/week + ₹90/month",
-      contribution: "Time + Skills + Support",
+      commitment: "7 hours/week",
+      contribution: "Time + Skills",
       benefits: [
         "Personal development assessment and growth roadmap",
         "Skills training and certification in community impact areas",
@@ -177,8 +177,8 @@ export default function JoinMovement() {
     },
     {
       name: "Systems Catalyst",
-      commitment: "4+ hours/week + ₹900/month",
-      contribution: "Leadership + Resources",
+      commitment: "14 hours/week",
+      contribution: "Leadership + Expertise",
       benefits: [
         "Everything in Community Volunteer",
         "Advanced training in project management and impact measurement",
@@ -192,7 +192,7 @@ export default function JoinMovement() {
     },
     {
       name: "Movement Builder",
-      commitment: "8+ hours/week + ₹9000/month",
+      commitment: "28 hours/week",
       contribution: "Strategy + Implementation",
       benefits: [
         "Everything in Systems Catalyst",
