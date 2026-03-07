@@ -322,9 +322,11 @@ export default function JoinMovement() {
                       </ul>
                     </div>
 
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-xs sm:text-sm md:text-base py-3 px-2 min-h-[44px] font-medium">
-                      Join Now
-                    </Button>
+                    <Link to="/service" className="w-full">
+                      <Button className="w-full bg-primary hover:bg-primary/90 text-xs sm:text-sm md:text-base py-3 px-2 min-h-[44px] font-medium">
+                        Join as Partner
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </motion.div>
