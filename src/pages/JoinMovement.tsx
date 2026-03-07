@@ -342,7 +342,7 @@ export default function JoinMovement() {
               className="bg-gradient-to-r from-hdi-gold/5 via-hdi-blue/5 to-hdi-navy/5 border-2 border-hdi-gold/20 rounded-xl p-8"
             >
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-2 text-hdi-navy">Transform Your Purpose Into Profit</h3>
+                <h3 className="text-2xl font-bold mb-2 text-hdi-navy">Every Partner Is an Entrepreneur</h3>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   Launch your ikigai-based social enterprise with comprehensive incubation, mentorship, and network support. 
                   <strong className="text-hdi-navy"> Zero money needed. Only your time.</strong>
