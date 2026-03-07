@@ -106,12 +106,14 @@ function SystemsApproach() {
                       <div className="text-sm text-white/70">
                         <span className="font-semibold text-hdi-gold">{area.volunteers}</span> active volunteers
                       </div>
-                      <Button 
-                        size="sm" 
-                        className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold w-full sm:w-auto text-xs sm:text-sm px-3 py-2"
-                      >
-                        Join Team
-                      </Button>
+                      <Link to="/service">
+                        <Button 
+                          size="sm" 
+                          className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold w-full sm:w-auto text-xs sm:text-sm px-3 py-2"
+                        >
+                          Join Team
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -146,13 +148,15 @@ function SystemsApproach() {
                 <span className="text-sm">Research-grade methodology</span>
               </div>
             </div>
-            <Button 
-              size="lg" 
-              className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
-            >
-              <span className="hidden sm:inline">Begin Your Systems Impact Journey</span>
-              <span className="sm:hidden">Start Impact Journey</span>
-            </Button>
+            <Link to="/service">
+              <Button 
+                size="lg" 
+                className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-base w-full sm:w-auto"
+              >
+                <span className="hidden sm:inline">Begin Your Systems Impact Journey</span>
+                <span className="sm:hidden">Start Impact Journey</span>
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -163,7 +167,7 @@ function SystemsApproach() {
 export default function JoinMovement() {
   const commitmentTiers = [
     {
-      name: "Community Volunteer",
+      name: "Partner — Explorer",
       commitment: "7 hours/week",
       contribution: "Time + Skills",
       benefits: [
@@ -176,11 +180,11 @@ export default function JoinMovement() {
       ]
     },
     {
-      name: "Systems Catalyst",
+      name: "Partner — Builder",
       commitment: "14 hours/week",
       contribution: "Leadership + Expertise",
       benefits: [
-        "Everything in Community Volunteer",
+        "Everything in Explorer tier",
         "Advanced training in project management and impact measurement",
         "One-on-one mentoring with experienced professionals and academics",
         "Leadership opportunities in high-impact community projects",
@@ -191,11 +195,11 @@ export default function JoinMovement() {
       ]
     },
     {
-      name: "Movement Builder",
+      name: "Partner — Architect",
       commitment: "28 hours/week",
       contribution: "Strategy + Implementation",
       benefits: [
-        "Everything in Systems Catalyst",
+        "Everything in Builder tier",
         "Access to exclusive learning resources and webinars",
         "Direct partnerships with universities, NGOs, and policy organizations",
         "Training in grant writing, fundraising, and social entrepreneurship",
@@ -286,7 +290,8 @@ export default function JoinMovement() {
       {/* Commitment Tiers */}
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Choose Your Level of Impact</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Choose Your Partnership Level</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Every volunteer is an entrepreneurial partner — you invest your time and talent, and we invest in your growth. No fees, no donations. Just shared purpose.</p>
           <div className="grid md:grid-cols-3 gap-8">
             {commitmentTiers.map((tier, i) => (
               <motion.div
@@ -317,9 +322,11 @@ export default function JoinMovement() {
                       </ul>
                     </div>
 
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-xs sm:text-sm md:text-base py-3 px-2 min-h-[44px] font-medium">
-                      Join Now
-                    </Button>
+                    <Link to="/service" className="w-full">
+                      <Button className="w-full bg-primary hover:bg-primary/90 text-xs sm:text-sm md:text-base py-3 px-2 min-h-[44px] font-medium">
+                        Join as Partner
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -335,7 +342,7 @@ export default function JoinMovement() {
               className="bg-gradient-to-r from-hdi-gold/5 via-hdi-blue/5 to-hdi-navy/5 border-2 border-hdi-gold/20 rounded-xl p-8"
             >
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-2 text-hdi-navy">Transform Your Purpose Into Profit</h3>
+                <h3 className="text-2xl font-bold mb-2 text-hdi-navy">Every Partner Is an Entrepreneur</h3>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   Launch your ikigai-based social enterprise with comprehensive incubation, mentorship, and network support. 
                   <strong className="text-hdi-navy"> Zero money needed. Only your time.</strong>
@@ -388,9 +395,11 @@ export default function JoinMovement() {
               </div>
               
               <div className="text-center mt-8">
-                <Button className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-bold px-4 sm:px-6 md:px-8 py-3 text-sm sm:text-base md:text-lg w-full sm:w-auto min-h-[44px]">
-                  Apply Now
-                </Button>
+                <Link to="/service">
+                  <Button className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-bold px-4 sm:px-6 md:px-8 py-3 text-sm sm:text-base md:text-lg w-full sm:w-auto min-h-[44px]">
+                    Apply Now
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>
