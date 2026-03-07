@@ -153,6 +153,16 @@ const Navbar = () => {
               <div className="px-3 pt-2">
                 <Button 
                   size="sm" 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white mb-2"
+                  onClick={() => {
+                    navigate('/service');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  Serve Now
+                </Button>
+                <Button 
+                  size="sm" 
                   className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700"
                   onClick={() => {
                     navigate('/join-movement');

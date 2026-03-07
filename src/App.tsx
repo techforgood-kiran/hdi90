@@ -40,7 +40,7 @@ const App = () => (
           <Route path="/missions/krishi" element={<MissionKrishi />} />
           <Route path="/missions/regenerate-prosper" element={<RegenerateProsper />} />
           <Route path="/missions/enablers" element={<CrossMissionEnablers />} />
-          <Route path="/serve" element={<Serve />} />
+          <Route path="/service" element={<Serve />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
