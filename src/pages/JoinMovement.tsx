@@ -106,12 +106,14 @@ function SystemsApproach() {
                       <div className="text-sm text-white/70">
                         <span className="font-semibold text-hdi-gold">{area.volunteers}</span> active volunteers
                       </div>
-                      <Button 
-                        size="sm" 
-                        className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold w-full sm:w-auto text-xs sm:text-sm px-3 py-2"
-                      >
-                        Join Team
-                      </Button>
+                      <Link to="/service">
+                        <Button 
+                          size="sm" 
+                          className="bg-hdi-gold hover:bg-hdi-gold/90 text-hdi-navy font-semibold w-full sm:w-auto text-xs sm:text-sm px-3 py-2"
+                        >
+                          Join Team
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
