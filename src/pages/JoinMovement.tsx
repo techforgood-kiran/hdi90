@@ -290,7 +290,8 @@ export default function JoinMovement() {
       {/* Commitment Tiers */}
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Choose Your Level of Impact</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Choose Your Partnership Level</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Every volunteer is an entrepreneurial partner — you invest your time and talent, and we invest in your growth. No fees, no donations. Just shared purpose.</p>
           <div className="grid md:grid-cols-3 gap-8">
             {commitmentTiers.map((tier, i) => (
               <motion.div
