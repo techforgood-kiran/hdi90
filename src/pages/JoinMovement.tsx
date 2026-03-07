@@ -180,11 +180,11 @@ export default function JoinMovement() {
       ]
     },
     {
-      name: "Systems Catalyst",
+      name: "Partner — Builder",
       commitment: "14 hours/week",
       contribution: "Leadership + Expertise",
       benefits: [
-        "Everything in Community Volunteer",
+        "Everything in Explorer tier",
         "Advanced training in project management and impact measurement",
         "One-on-one mentoring with experienced professionals and academics",
         "Leadership opportunities in high-impact community projects",
