@@ -10,7 +10,7 @@ export interface ScrollProgress {
 export const useScrollController = () => {
   const { scrollY, scrollYProgress } = useScroll();
   const [isScrolling, setIsScrolling] = useState(false);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   // Create section-specific progress tracker
   const sectionProgress = (start: number, end: number) => {
