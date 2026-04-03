@@ -47,7 +47,8 @@ export const AnimatedHero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          A commitment to achieving <strong>Holistic Development Index of 0.90 by 31.12.2030</strong> through 
+          Your <strong>Holistic Development Index (HDI 2.0)</strong> is an individual, AI-generated dynamic score — not a statistical average. 
+          A commitment to achieving <strong>0.90 by 31.12.2030</strong> through 
           principled entrepreneurship, ethical governance and meaningful impact.
         </motion.p>
         
