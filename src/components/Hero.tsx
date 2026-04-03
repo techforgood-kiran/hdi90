@@ -29,7 +29,8 @@ const Hero = () => {
         </h1>
         
         <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed opacity-90 px-4">
-          A commitment to achieving <strong>Holistic Development Index of 0.90 by 31.12.2030</strong> through 
+          Your <strong>Holistic Development Index (HDI 2.0)</strong> is an individual, AI-generated dynamic score — not a statistical average. 
+          A commitment to achieving <strong>0.90 by 31.12.2030</strong> through 
           principled entrepreneurship, ethical governance and meaningful impact.
         </p>
         
