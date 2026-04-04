@@ -42,7 +42,8 @@ const Index = () => {
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
               Traditional economic indicators fail to capture human flourishing. HDI 2.0 provides a science-backed framework 
-              that measures health, education, happiness, and environmental impact in one actionable index.
+              that measures health, education, happiness, and environmental impact in one actionable index. 
+              An individual AI generated dynamic score. Individual. Not a statistical average.
             </p>
           </motion.div>
 
