@@ -54,7 +54,7 @@ export const useCountdown = (targetDate: Date): CountdownTime => {
     };
 
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 50);
+    const timer = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timer);
   }, [targetDate]);
 
