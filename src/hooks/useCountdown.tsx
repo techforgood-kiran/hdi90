@@ -13,14 +13,8 @@ interface CountdownTime {
 
 export const useCountdown = (targetDate: Date): CountdownTime => {
   const [timeLeft, setTimeLeft] = useState<CountdownTime>({
-    years: 0,
-    months: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    milliseconds: 0,
-    totalMilliseconds: 0
+    years: 0, months: 0, days: 0, hours: 0,
+    minutes: 0, seconds: 0, milliseconds: 0, totalMilliseconds: 0
   });
 
   useEffect(() => {
@@ -28,63 +22,39 @@ export const useCountdown = (targetDate: Date): CountdownTime => {
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
 
-      if (difference > 0) {
-        // Calculate years, months, days using calendar math for accuracy
-        let years = targetDate.getFullYear() - now.getFullYear();
-        let months = targetDate.getMonth() - now.getMonth();
-        let days = targetDate.getDate() - now.getDate();
-
-        // Adjust for negative days
-        if (days < 0) {
-          months--;
-          const prevMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0);
-          days += prevMonth.getDate();
-        }
-        // Adjust for negative months
-        if (months < 0) {
-          years--;
-          months += 12;
-        }
-
-        // For the time portion, compute remainder after full calendar days
-        const futureDate = new Date(now);
-        futureDate.setFullYear(futureDate.getFullYear() + years);
-        futureDate.setMonth(futureDate.getMonth() + months);
-        futureDate.setDate(futureDate.getDate() + days);
-        const timeRemainder = targetDate.getTime() - futureDate.getTime();
-
-        const hours = Math.floor(timeRemainder / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemainder % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemainder % (1000 * 60)) / 1000);
-        const milliseconds = Math.floor(timeRemainder % 1000);
-
+      if (difference <= 0) {
         setTimeLeft({
-          years,
-          months,
-          days,
-          hours: Math.max(0, hours),
-          minutes: Math.max(0, minutes),
-          seconds: Math.max(0, seconds),
-          milliseconds: Math.max(0, milliseconds),
-          totalMilliseconds: difference
+          years: 0, months: 0, days: 0, hours: 0,
+          minutes: 0, seconds: 0, milliseconds: 0, totalMilliseconds: 0
         });
-      } else {
-        setTimeLeft({
-          years: 0,
-          months: 0,
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-          milliseconds: 0,
-          totalMilliseconds: 0
-        });
+        return;
       }
+
+      // Use simple total-milliseconds approach for reliable countdown
+      const totalSeconds = Math.floor(difference / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+      const totalDays = Math.floor(totalHours / 24);
+
+      // Approximate years and months from total days
+      const years = Math.floor(totalDays / 365.25);
+      const remainingDaysAfterYears = totalDays - Math.floor(years * 365.25);
+      const months = Math.floor(remainingDaysAfterYears / 30.44);
+      const days = remainingDaysAfterYears - Math.floor(months * 30.44);
+
+      const hours = totalHours % 24;
+      const minutes = totalMinutes % 60;
+      const seconds = totalSeconds % 60;
+      const milliseconds = Math.floor(difference % 1000);
+
+      setTimeLeft({
+        years, months, days, hours, minutes, seconds, milliseconds,
+        totalMilliseconds: difference
+      });
     };
 
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 10); // Update every 10ms for smooth millisecond display
-
+    const timer = setInterval(calculateTimeLeft, 50);
     return () => clearInterval(timer);
   }, [targetDate]);
 
