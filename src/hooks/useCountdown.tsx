@@ -29,22 +29,43 @@ export const useCountdown = (targetDate: Date): CountdownTime => {
       const difference = targetDate.getTime() - now.getTime();
 
       if (difference > 0) {
-        const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
-        const months = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-        const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        const milliseconds = Math.floor(difference % 1000);
+        // Calculate years, months, days using calendar math for accuracy
+        let years = targetDate.getFullYear() - now.getFullYear();
+        let months = targetDate.getMonth() - now.getMonth();
+        let days = targetDate.getDate() - now.getDate();
+
+        // Adjust for negative days
+        if (days < 0) {
+          months--;
+          const prevMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0);
+          days += prevMonth.getDate();
+        }
+        // Adjust for negative months
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        // For the time portion, compute remainder after full calendar days
+        const futureDate = new Date(now);
+        futureDate.setFullYear(futureDate.getFullYear() + years);
+        futureDate.setMonth(futureDate.getMonth() + months);
+        futureDate.setDate(futureDate.getDate() + days);
+        const timeRemainder = targetDate.getTime() - futureDate.getTime();
+
+        const hours = Math.floor(timeRemainder / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemainder % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemainder % (1000 * 60)) / 1000);
+        const milliseconds = Math.floor(timeRemainder % 1000);
 
         setTimeLeft({
           years,
           months,
           days,
-          hours,
-          minutes,
-          seconds,
-          milliseconds,
+          hours: Math.max(0, hours),
+          minutes: Math.max(0, minutes),
+          seconds: Math.max(0, seconds),
+          milliseconds: Math.max(0, milliseconds),
           totalMilliseconds: difference
         });
       } else {
