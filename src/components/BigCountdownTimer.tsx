@@ -191,7 +191,7 @@ export const BigCountdownTimer = () => {
             <FlipCard value={timeLeft.seconds} label="Seconds" />
           </div>
 
-          {/* Milliseconds ticker */}
+          {/* Live indicator */}
           <motion.div
             className="inline-flex items-center gap-3 bg-red-900/60 backdrop-blur-sm border border-red-500/30 rounded-full px-6 py-3 mb-10"
             animate={{
@@ -204,10 +204,7 @@ export const BigCountdownTimer = () => {
             transition={{ duration: 2, repeat: Infinity }}
           >
             <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-            <span className="font-mono text-lg md:text-xl text-red-200 tracking-wider">
-              .{timeLeft.milliseconds.toString().padStart(3, '0')}
-            </span>
-            <span className="text-xs text-red-400 uppercase tracking-widest">ms</span>
+            <span className="font-mono text-sm md:text-base text-red-300 uppercase tracking-widest">Live Countdown</span>
           </motion.div>
 
           {/* Call to Action */}
