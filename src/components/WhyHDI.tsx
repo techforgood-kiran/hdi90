@@ -30,8 +30,8 @@ const WhyHDI = () => {
                         <DollarSign className="w-6 h-6 text-hdi-blue" />
                       </div>
                       <div>
-                        <div className="font-semibold text-hdi-navy">GDP Ranking: 4th Globally</div>
-                        <div className="text-sm text-muted-foreground">After USA, China & Germany</div>
+                        <div className="font-semibold text-hdi-navy">💰 GDP (Nominal): ~$3.7 Trillion USD</div>
+                        <div className="text-sm text-muted-foreground">Rank: 5th in the world (2024–2025 estimates)</div>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
@@ -39,8 +39,8 @@ const WhyHDI = () => {
                         <AlertTriangle className="w-6 h-6 text-red-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-hdi-navy">HDI: 0.685 (Rank 130/195)</div>
-                        <div className="text-sm text-muted-foreground">Massive disparity in human development</div>
+                        <div className="font-semibold text-hdi-navy">HDI Score: ~0.64 | Rank: 134th out of 190+ countries</div>
+                        <div className="text-sm text-muted-foreground">A staggering gap between economic power and human well-being</div>
                       </div>
                     </div>
                   </div>
