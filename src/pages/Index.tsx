@@ -27,7 +27,8 @@ const Index = () => {
       transition={{ duration: 0.8 }}
     >
       <Navbar />
-      
+      <Hero />
+
       {/* Evidence-Based Impact Section */}
       <section className="bg-gradient-card py-12 sm:py-16 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
@@ -48,11 +49,7 @@ const Index = () => {
           </motion.div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
               <Card className="text-center p-6 shadow-soft">
                 <CardContent>
                   <BarChart3 className="w-12 h-12 text-hdi-blue mx-auto mb-4" />
@@ -65,11 +62,7 @@ const Index = () => {
               </Card>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
               <Card className="text-center p-6 shadow-soft">
                 <CardContent>
                   <Target className="w-12 h-12 text-hdi-green mx-auto mb-4" />
@@ -82,11 +75,7 @@ const Index = () => {
               </Card>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
               <Card className="text-center p-6 shadow-soft">
                 <CardContent>
                   <Globe className="w-12 h-12 text-hdi-gold mx-auto mb-4" />
@@ -144,10 +133,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Big Countdown Timer */}
       <BigCountdownTimer />
-
-      <Hero />
       <WhyHDI />
       <HDI2 />
       <CallToAction />
