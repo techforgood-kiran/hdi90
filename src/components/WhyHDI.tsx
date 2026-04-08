@@ -14,56 +14,7 @@ const WhyHDI = () => {
           </p>
         </div>
         
-        {/* India Example */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <Card className="p-8 shadow-medium bg-gradient-card">
-            <CardContent className="p-0">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4 text-hdi-navy flex items-center">
-                    <TrendingUp className="w-6 h-6 mr-2 text-hdi-blue" />
-                    India: A Tale of Two Metrics
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-hdi-blue/10 rounded-full flex items-center justify-center">
-                        <DollarSign className="w-6 h-6 text-hdi-blue" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-hdi-navy">💰 GDP (Nominal): ~$3.7 Trillion USD</div>
-                        <div className="text-sm text-muted-foreground">Rank: 5th in the world (2024–2025 estimates)</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                        <AlertTriangle className="w-6 h-6 text-red-600" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-hdi-navy">HDI Score: ~0.64 | Rank: 134th out of 190+ countries</div>
-                        <div className="text-sm text-muted-foreground">A staggering gap between economic power and human well-being</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white/50 p-6 rounded-lg">
-                  <h4 className="font-semibold mb-4 text-hdi-navy">The Reality:</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Maximum part of India lives like urban poor or in rural villages where there is 
-                    <strong> no access to good education, healthcare or high paying employment</strong> or 
-                    enough support for entrepreneurship.
-                  </p>
-                  <div className="mt-4 p-3 bg-hdi-light-blue rounded">
-                    <p className="text-sm font-medium text-hdi-navy">
-                      GDP can increase if the rich gets richer! But for HDI 1.0 to increase, 
-                      Education, Health, and Income Equity must improve for ALL.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        
         
         
         {/* Vision Statement */}
